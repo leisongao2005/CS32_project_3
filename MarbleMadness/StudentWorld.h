@@ -20,6 +20,10 @@ public:
     virtual int move();
     virtual void cleanUp();
     void getCrystal() {m_crystalsCollected++;}
+    void addObject(Actor* object);
+    bool isObstructed(int x, int y, int direction);
+    bool isPit(int x, int y);
+    bool isEmpty(int x, int y);
 
 private:
     Avatar* m_player;
