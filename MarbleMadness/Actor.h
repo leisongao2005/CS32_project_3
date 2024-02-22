@@ -16,6 +16,9 @@ public:
     virtual bool isPit() {return false;}
     virtual bool isAlive() {return m_isAlive;}
     virtual bool isExit() {return false;}
+    virtual bool isMarble() {return false;}
+    virtual bool getAttacked() {return false;}
+    void setDead() {m_isAlive = false;}
     StudentWorld* getWorld() {return m_world;}
 private:
     StudentWorld* m_world;
@@ -24,71 +27,62 @@ private:
 
 class Pea : public Actor {
 public:
-    Pea(int startX, int startY, StudentWorld* world, int direction): Actor(IID_PEA, startX, startY, world, direction) {}
-    virtual void doSomething() {};
-private:
-    bool m_isAlive;
+    Pea(int startX, int startY, StudentWorld* world, int direction): Actor(IID_PEA, startX, startY, world, direction) {setVisible(true);}
+    virtual void doSomething();
 };
     
 class Avatar : public Actor {
 public:
-    Avatar(int startX, int startY, StudentWorld* world): Actor(IID_PLAYER, startX, startY, world, right), m_hitpoints(20), m_numPeas(20), m_isAlive(true) {
-        setVisible(true);
-    }
-    bool isAlive() {return m_isAlive;}
+    Avatar(int startX, int startY, StudentWorld* world): Actor(IID_PLAYER, startX, startY, world, right), m_hitpoints(20), m_numPeas(20) {setVisible(true);}
     virtual void doSomething();
-    void getAttacked();
+    virtual bool getAttacked();
     void firePea();
     int getHealth() {return m_hitpoints*5;}
     int getAmmo() {return m_numPeas;}
 private:
     int m_hitpoints;
     int m_numPeas;
-    bool m_isAlive;
 };
 
 class Wall : public Actor {
 public:
     Wall(int startX, int startY, StudentWorld* world): Actor(IID_WALL, startX, startY, world) {setVisible(true);}
     virtual bool canPush(int direction) {return false;}
+    virtual bool getAttacked() {return true;}
 };
 
 class Marble : public Actor {
 public:
-    Marble(int startX, int startY, StudentWorld* world): Actor(IID_MARBLE, startX, startY, world), m_hitpoints(10), m_isAlive(true){}
-    void getAttacked();
+    Marble(int startX, int startY, StudentWorld* world): Actor(IID_MARBLE, startX, startY, world), m_hitpoints(10) {setVisible(true);}
+    virtual bool getAttacked();
     void getPushed(int direction);
     virtual bool canPush(int direction);
+    virtual bool isMarble() {return true;}
 private:
     int m_hitpoints;
-    bool m_isAlive;
 };
 
 class Pit : public Actor {
 public:
-    Pit(int startX, int startY, StudentWorld* world): Actor(IID_PIT, startX, startY, world) {}
-    virtual void doSomething() {};
+    Pit(int startX, int startY, StudentWorld* world): Actor(IID_PIT, startX, startY, world) {setVisible(true);}
+    virtual void doSomething();
     virtual bool canPush(int direction) {return false;}
     virtual bool isPit() {return true;}
-private:
-    bool m_isAlive;
 };
 
 class Crystal : public Actor {
 public:
-    Crystal(int startX, int startY, StudentWorld* world): Actor(IID_CRYSTAL, startX, startY, world) {}
-    virtual void doSomething() {};
-private:
-    bool m_isAlive;
+    Crystal(int startX, int startY, StudentWorld* world): Actor(IID_CRYSTAL, startX, startY, world) {setVisible(true);}
+    virtual void doSomething();
 };
 
 class Exit : public Actor {
 public:
     Exit(int startX, int startY, StudentWorld* world): Actor(IID_EXIT, startX, startY, world) {setVisible(false);}
-    virtual void doSomething() {};
+    virtual void doSomething();
     virtual bool isExit() {return true;}
-private:
-    bool m_isVisible;
+//private:
+//    bool m_isVisible;
 };
 
 class Goodie : public Actor {
@@ -121,7 +115,10 @@ class Robot : public Actor {
 public:
     Robot(int imageID, int startX, int startY, StudentWorld* world, int direction): Actor(imageID, startX, startY, world, direction) {}
     virtual void doSomething()=0;
-    virtual void getAttacked()=0;
+    virtual bool getAttacked() {
+        m_hitpoints -= 2;
+        return true;
+    }
     virtual bool canPush(int direction) {return false;}
 private:
     int m_hitpoints;
@@ -133,14 +130,12 @@ class RageBot : public Robot {
 public:
     RageBot(int startX, int startY, StudentWorld* world, int direction): Robot(IID_RAGEBOT, startX, startY, world, direction) {}
     virtual void doSomething() {};
-    virtual void getAttacked() {};
 };
 
 class ThiefBot : public Robot {
 public:
     ThiefBot(int startX, int startY, StudentWorld* world, int direction, int imageID = IID_THIEFBOT): Robot(imageID, startX, startY, world, direction) {}
     virtual void doSomething() {};
-    virtual void getAttacked() {};
 private:
     int m_distanceBeforeTurning;
 };
@@ -149,7 +144,6 @@ class MeanThiefBot : public ThiefBot {
 public:
     MeanThiefBot(int startX, int startY, StudentWorld* world, int direction): ThiefBot(startX, startY, world, direction, IID_MEAN_THIEFBOT) {}
     virtual void doSomething() {};
-    virtual void getAttacked() {};
 };
 
 class ThiefBotFactory : public Actor {
@@ -162,6 +156,7 @@ public:
     }
     virtual void doSomething() {};
     virtual bool canPush(int direction) {return false;}
+    virtual bool getAttacked() {return true;}
 private:
     bool m_makeRegularBots;
 };

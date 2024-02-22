@@ -1,10 +1,12 @@
 #include "Actor.h"
 #include "StudentWorld.h"
 
+#include <iostream>
+using namespace std;
 // Students:  Add code to this file, Actor.h, StudentWorld.h, and StudentWorld.cpp
 
 void Avatar::doSomething() {
-    if (!m_isAlive)
+    if (!isAlive())
         return;
     int ch;
     // must implement getWorld function
@@ -12,7 +14,7 @@ void Avatar::doSomething() {
         switch (ch)
         {
             case KEY_PRESS_ESCAPE:
-                m_isAlive = false;
+                setDead();
                 break;
             case KEY_PRESS_SPACE: // fires a pea
                 firePea();
@@ -43,6 +45,8 @@ void Avatar::doSomething() {
 
 void Avatar::firePea() {
     int dir = getDirection();
+    if (m_numPeas <= 0)
+        return;
     switch(dir) {
         case up:
             getWorld()->addObject(new Pea(getX(), getY() + 1, getWorld(), getDirection()));
@@ -57,22 +61,25 @@ void Avatar::firePea() {
             getWorld()->addObject(new Pea(getX() + 1, getY(), getWorld(), getDirection()));
             break;
     }
+    m_numPeas--;
 }
 
-void Avatar::getAttacked() {
+bool Avatar::getAttacked() {
     m_hitpoints -= 2;
     if (m_hitpoints < 0) {
         getWorld()->playSound(SOUND_PLAYER_DIE);
-        m_isAlive = false;
+        setDead();
     }
     else
         getWorld()->playSound(SOUND_PLAYER_IMPACT);
+    return true;
 }
 
-void Marble::getAttacked() {
+bool Marble::getAttacked() {
     m_hitpoints -= 2;
     if (m_hitpoints < 0)
-        m_isAlive = false;
+        setDead();
+    return true;
 }
 
 bool Marble::canPush(int direction) {
@@ -102,29 +109,54 @@ bool Marble::canPush(int direction) {
     return false;
 }
 
-void Marble::getPushed(int direction) {
-    if (canPush(direction)) {
-        int next_x = -1, next_y = -1;
-        switch (direction) {
-            case up:
-                next_x = getX();
-                next_y = getY() + 1;
-                break;
-            case down:
-                next_x = getX();
-                next_y = getY() - 1;
-                break;
-            case left:
-                next_x = getX() - 1;
-                next_y = getY();
-                break;
-            case right:
-                next_x = getX() + 1;
-                next_y = getY();
-                break;
+void Pea::doSomething() {
+    if (!isAlive())
+        return;
+    vector<Actor*> items = getWorld()->getActor(getX(), getY());
+    for (size_t i = 0; i != items.size(); i++) {
+        Actor* actor = items.at(i);
+        if (actor->getAttacked()) {
+            setDead();
         }
-        moveTo(next_x, next_y);
+    }
+    moveForward();
+    items = getWorld()->getActor(getX(), getY());
+    for (size_t i = 0; i != items.size(); i++) {
+        Actor* actor = items.at(i);
+        if (actor->getAttacked()) {
+            setDead();
+        }
     }
 }
 
+void Pit::doSomething() {
+    if (!isAlive())
+        return;
+    vector<Actor*> items = getWorld()->getActor(getX(), getY());
+    for (size_t i = 0; i != items.size(); i++) {
+        Actor* actor = items.at(i);
+        if (actor->isMarble()) {
+            setDead();
+            actor->setDead();
+        }
+    }
+}
+
+void Crystal::doSomething() {
+    if (!isAlive())
+        return;
+    if (getWorld()->playerHere(getX(), getY())) {
+        getWorld()->increaseScore(50);
+        getWorld()->getCrystal();
+        setDead();
+        getWorld()->playSound(SOUND_GOT_GOODIE);
+    }
+}
+
+void Exit::doSomething() {
+    if (isVisible() && getWorld()->playerHere(getX(), getY())) {
+        getWorld()->playSound(SOUND_FINISHED_LEVEL);
+        getWorld()->completeLevel();
+    }
+}
 

@@ -24,6 +24,9 @@ public:
     bool isObstructed(int x, int y, int direction);
     bool isPit(int x, int y);
     bool isEmpty(int x, int y);
+    std::vector<Actor*> getActor(int x, int y);
+    bool playerHere(int x, int y);
+    void completeLevel();
 
 private:
     Avatar* m_player;

@@ -22,7 +22,9 @@ int StudentWorld::init()
 {
     // load level
     Level lev(assetPath());
-    Level::LoadResult result = lev.loadLevel("level00.txt");
+    Level::LoadResult result = lev.loadLevel("level0" + to_string(getLevel()) + ".txt");
+    cout << to_string(getLevel()) << endl;
+//    Level::LoadResult result = lev.loadLevel("leve" + to_string(getLevel()) + ".txt");
     if (result == Level::load_fail_file_not_found) {
         cerr << "Could not find level00.txt data file\n";
         return GWSTATUS_LEVEL_ERROR;
@@ -99,7 +101,7 @@ int StudentWorld::move()
     
     // Make all actors do something, check if player dies after every action
     m_player->doSomething();
-    for (size_t i = 0; i < m_Actors.size(); i ++) {
+    for (size_t i = 0; i < m_Actors.size(); i++) {
         if (m_Actors[i]->isAlive())
             m_Actors[i]->doSomething();
         if (!m_player->isAlive())
@@ -107,15 +109,19 @@ int StudentWorld::move()
     }
     
     // check if player has completed the level
-    if (m_crystals == m_crystalsCollected && m_exitX == m_player->getX() && m_exitY == m_player->getY()) {
+    if (m_crystals == m_crystalsCollected && playerHere(m_exitX, m_exitY)) {
         increaseScore(2000 + m_bonus);
         return GWSTATUS_FINISHED_LEVEL;
     }
     
     // remove dead actors
-    for (size_t i = 0; i < m_Actors.size(); i ++) {
-        if (!m_Actors[i]->isAlive())
+    for (size_t i = 0; i < m_Actors.size();) {
+        if (!m_Actors[i]->isAlive()) {
             delete m_Actors[i];
+            m_Actors.erase(m_Actors.begin() + i);
+        }
+        else
+            i ++;
     }
     
     // reducing time bonus
@@ -125,8 +131,9 @@ int StudentWorld::move()
     // revealing exit if all crystals are found
     if (m_crystals == m_crystalsCollected) {
         for (size_t i = 0; i < m_Actors.size(); i ++) {
-            if (m_Actors[i]->isExit()) {
+            if (m_Actors[i]->isExit() && !m_Actors[i]->isVisible()) {
                 m_Actors[i]->setVisible(IID_EXIT);
+                playSound(SOUND_REVEAL_EXIT);
             }
         }
     }
@@ -167,9 +174,28 @@ bool StudentWorld::isEmpty(int x, int y) {
     return true;
 }
 
+vector<Actor*> StudentWorld::getActor(int x, int y) {
+    vector<Actor*> result;
+    for (size_t i = 0; i < m_Actors.size(); i ++) {
+        if (m_Actors[i]->getX() == x && m_Actors[i]->getY() == y)
+            result.push_back(m_Actors[i]);
+    }
+    return result;
+}
+
+bool StudentWorld::playerHere(int x, int y) {
+    return m_player->getX() == x && m_player->getY() == y;
+}
+
 void StudentWorld::cleanUp()
 {
-    for (size_t i = 0; i != m_Actors.size(); i ++)
+    for (size_t i = 0; i != m_Actors.size();) {
         delete m_Actors[i];
+        m_Actors.erase(m_Actors.begin() + i);
+    }
     delete m_player;
+}
+
+void StudentWorld::completeLevel() {
+//    advanceToNextLevel();
 }
