@@ -330,6 +330,42 @@
 			<key>uniqueIdentifier</key>
 			<string>049FB8E2-6F88-4FCF-B4AC-0B04D0BED7AB</string>
 		</dict>
+		<key>04CAD18B-2410-4E03-9030-A1DAD8301ECB</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>04CAD18B-2410-4E03-9030-A1DAD8301ECB.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>signature</key>
+			<string>eyJidWlsZFN5c3RlbVRhc2tfYnVpbGRUYXNrIjoiUHJlcGFyZSBidWlsZCIsInR5cGUiOnsiYnVpbGRTeXN0ZW1UYXNrIjp7fX19</string>
+			<key>timeStartedRecording</key>
+			<real>730341549.625844</real>
+			<key>timeStoppedRecording</key>
+			<real>63113904000</real>
+			<key>title</key>
+			<string>Build MarbleMadness</string>
+			<key>uniqueIdentifier</key>
+			<string>04CAD18B-2410-4E03-9030-A1DAD8301ECB</string>
+		</dict>
 		<key>0563CB6C-FAAC-43D6-B93C-5F1446CD3A4B</key>
 		<dict>
 			<key>className</key>
@@ -402,6 +438,42 @@
 			<key>uniqueIdentifier</key>
 			<string>06078471-15B3-49E9-AA70-8A815055C491</string>
 		</dict>
+		<key>060B8DD0-580F-445B-95A6-58D292ABCC0A</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>060B8DD0-580F-445B-95A6-58D292ABCC0A.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>signature</key>
+			<string>eyJibHVlcHJpbnRfYmx1ZXByaW50SWRlbnRpZmllciI6IjRCOTFGOEE0MjAzM0YyNjAwMDNBRkE3OCIsImJsdWVwcmludF9wcm92aWRlckZpbGVQYXRoU3RyaW5nIjoiXC9Vc2Vyc1wvbGVpc29uZ2FvXC9EZXNrdG9wXC9DUzMyXC9NYXJibGVNYWRuZXNzXC9NYXJibGVNYWRuZXNzLnhjb2RlcHJvaiIsInR5cGUiOnsiYmx1ZXByaW50Ijp7fX19</string>
+			<key>timeStartedRecording</key>
+			<real>730341462.673388</real>
+			<key>timeStoppedRecording</key>
+			<real>63113904000</real>
+			<key>title</key>
+			<string>Build MarbleMadness</string>
+			<key>uniqueIdentifier</key>
+			<string>060B8DD0-580F-445B-95A6-58D292ABCC0A</string>
+		</dict>
 		<key>062D30F9-FB55-4043-9891-A36E6CB388AC</key>
 		<dict>
 			<key>className</key>
@@ -437,6 +509,42 @@
 			<string>Build MarbleMadness</string>
 			<key>uniqueIdentifier</key>
 			<string>062D30F9-FB55-4043-9891-A36E6CB388AC</string>
+		</dict>
+		<key>0661B9E8-E218-44B2-9932-EA0660D179A4</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>0661B9E8-E218-44B2-9932-EA0660D179A4.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>signature</key>
+			<string>eyJibHVlcHJpbnRQcm92aWRlcl9wcm92aWRlckZpbGVQYXRoU3RyaW5nIjoiXC9Vc2Vyc1wvbGVpc29uZ2FvXC9EZXNrdG9wXC9DUzMyXC9NYXJibGVNYWRuZXNzXC9NYXJibGVNYWRuZXNzLnhjb2RlcHJvaiIsInR5cGUiOnsiYmx1ZXByaW50UHJvdmlkZXIiOnt9fX0=</string>
+			<key>timeStartedRecording</key>
+			<real>730341974.750314</real>
+			<key>timeStoppedRecording</key>
+			<real>63113904000</real>
+			<key>title</key>
+			<string>Build MarbleMadness</string>
+			<key>uniqueIdentifier</key>
+			<string>0661B9E8-E218-44B2-9932-EA0660D179A4</string>
 		</dict>
 		<key>0667D1E7-032C-4281-BF81-A51711C12224</key>
 		<dict>
@@ -978,6 +1086,42 @@
 			<key>uniqueIdentifier</key>
 			<string>0BA63B90-26C8-4C66-9E7F-E37D67B432D0</string>
 		</dict>
+		<key>0BD8225C-D7DE-4145-8331-6B17EE1C9295</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>0BD8225C-D7DE-4145-8331-6B17EE1C9295.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>signature</key>
+			<string>eyJidWlsZFN5c3RlbVRhc2tfYnVpbGRUYXNrIjoiUHJlcGFyZSBidWlsZCIsInR5cGUiOnsiYnVpbGRTeXN0ZW1UYXNrIjp7fX19</string>
+			<key>timeStartedRecording</key>
+			<real>730341848.65694904</real>
+			<key>timeStoppedRecording</key>
+			<real>63113904000</real>
+			<key>title</key>
+			<string>Build MarbleMadness</string>
+			<key>uniqueIdentifier</key>
+			<string>0BD8225C-D7DE-4145-8331-6B17EE1C9295</string>
+		</dict>
 		<key>0DF4BA03-C665-40E7-AB14-6F9A7E231503</key>
 		<dict>
 			<key>className</key>
@@ -1049,6 +1193,42 @@
 			<string>Build MarbleMadness</string>
 			<key>uniqueIdentifier</key>
 			<string>0E5617A5-CDD9-4996-B34C-579680F2FC1F</string>
+		</dict>
+		<key>0E6FB6BB-71A9-404C-933F-D5DE67AECDFB</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>0E6FB6BB-71A9-404C-933F-D5DE67AECDFB.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>signature</key>
+			<string>eyJibHVlcHJpbnRQcm92aWRlcl9wcm92aWRlckZpbGVQYXRoU3RyaW5nIjoiXC9Vc2Vyc1wvbGVpc29uZ2FvXC9EZXNrdG9wXC9DUzMyXC9NYXJibGVNYWRuZXNzXC9NYXJibGVNYWRuZXNzLnhjb2RlcHJvaiIsInR5cGUiOnsiYmx1ZXByaW50UHJvdmlkZXIiOnt9fX0=</string>
+			<key>timeStartedRecording</key>
+			<real>730342844.14541805</real>
+			<key>timeStoppedRecording</key>
+			<real>63113904000</real>
+			<key>title</key>
+			<string>Build MarbleMadness</string>
+			<key>uniqueIdentifier</key>
+			<string>0E6FB6BB-71A9-404C-933F-D5DE67AECDFB</string>
 		</dict>
 		<key>0EAAF809-A56F-4157-95AD-A81EE4CFC55A</key>
 		<dict>
@@ -1481,6 +1661,42 @@
 			<string>Build MarbleMadness</string>
 			<key>uniqueIdentifier</key>
 			<string>131E80C6-8D5E-47AE-875A-A6131E30727B</string>
+		</dict>
+		<key>134A4F8B-B4B0-446A-87A9-B261250C83D7</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>134A4F8B-B4B0-446A-87A9-B261250C83D7.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>signature</key>
+			<string>eyJidWlsZFN5c3RlbVRhc2tfYnVpbGRUYXNrIjoiUHJlcGFyZSBidWlsZCIsInR5cGUiOnsiYnVpbGRTeXN0ZW1UYXNrIjp7fX19</string>
+			<key>timeStartedRecording</key>
+			<real>730341297.01522398</real>
+			<key>timeStoppedRecording</key>
+			<real>63113904000</real>
+			<key>title</key>
+			<string>Build MarbleMadness</string>
+			<key>uniqueIdentifier</key>
+			<string>134A4F8B-B4B0-446A-87A9-B261250C83D7</string>
 		</dict>
 		<key>155BE61A-244E-4101-AFCE-18EA1114C98B</key>
 		<dict>
@@ -2058,6 +2274,42 @@
 			<key>uniqueIdentifier</key>
 			<string>1B1698F3-7630-4E62-BDD5-C0F05B4A2C31</string>
 		</dict>
+		<key>1B1FAB4E-CE1A-452D-948A-1511D870D54C</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>1B1FAB4E-CE1A-452D-948A-1511D870D54C.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>signature</key>
+			<string>eyJibHVlcHJpbnRQcm92aWRlcl9wcm92aWRlckZpbGVQYXRoU3RyaW5nIjoiXC9Vc2Vyc1wvbGVpc29uZ2FvXC9EZXNrdG9wXC9DUzMyXC9NYXJibGVNYWRuZXNzXC9NYXJibGVNYWRuZXNzLnhjb2RlcHJvaiIsInR5cGUiOnsiYmx1ZXByaW50UHJvdmlkZXIiOnt9fX0=</string>
+			<key>timeStartedRecording</key>
+			<real>730341901.96859205</real>
+			<key>timeStoppedRecording</key>
+			<real>63113904000</real>
+			<key>title</key>
+			<string>Build MarbleMadness</string>
+			<key>uniqueIdentifier</key>
+			<string>1B1FAB4E-CE1A-452D-948A-1511D870D54C</string>
+		</dict>
 		<key>1BB9F33B-4CD1-4D48-932D-FF6D38CE1A24</key>
 		<dict>
 			<key>className</key>
@@ -2381,6 +2633,42 @@
 			<string>Build MarbleMadness</string>
 			<key>uniqueIdentifier</key>
 			<string>206417E2-41B6-4915-9038-F4399FFEA8BC</string>
+		</dict>
+		<key>2094E182-E239-4137-892B-B6CB0342B8C1</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>2094E182-E239-4137-892B-B6CB0342B8C1.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>signature</key>
+			<string>eyJidWlsZFN5c3RlbVRhc2tfYnVpbGRUYXNrIjoiUHJlcGFyZSBidWlsZCIsInR5cGUiOnsiYnVpbGRTeXN0ZW1UYXNrIjp7fX19</string>
+			<key>timeStartedRecording</key>
+			<real>730341951.61633098</real>
+			<key>timeStoppedRecording</key>
+			<real>63113904000</real>
+			<key>title</key>
+			<string>Build MarbleMadness</string>
+			<key>uniqueIdentifier</key>
+			<string>2094E182-E239-4137-892B-B6CB0342B8C1</string>
 		</dict>
 		<key>2145201B-0202-43BC-9F36-C1809C22A86E</key>
 		<dict>
@@ -2777,6 +3065,42 @@
 			<string>Build MarbleMadness</string>
 			<key>uniqueIdentifier</key>
 			<string>25ADA729-2FBC-4AE9-AD17-687C2593A125</string>
+		</dict>
+		<key>263E1024-F115-42E1-9068-56B4A9F4B549</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>263E1024-F115-42E1-9068-56B4A9F4B549.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>signature</key>
+			<string>eyJibHVlcHJpbnRfYmx1ZXByaW50SWRlbnRpZmllciI6IjRCOTFGOEE0MjAzM0YyNjAwMDNBRkE3OCIsImJsdWVwcmludF9wcm92aWRlckZpbGVQYXRoU3RyaW5nIjoiXC9Vc2Vyc1wvbGVpc29uZ2FvXC9EZXNrdG9wXC9DUzMyXC9NYXJibGVNYWRuZXNzXC9NYXJibGVNYWRuZXNzLnhjb2RlcHJvaiIsInR5cGUiOnsiYmx1ZXByaW50Ijp7fX19</string>
+			<key>timeStartedRecording</key>
+			<real>730341297.01522398</real>
+			<key>timeStoppedRecording</key>
+			<real>63113904000</real>
+			<key>title</key>
+			<string>Build MarbleMadness</string>
+			<key>uniqueIdentifier</key>
+			<string>263E1024-F115-42E1-9068-56B4A9F4B549</string>
 		</dict>
 		<key>265541A8-4C0F-4C6D-AAFF-8A9A3A1F8F06</key>
 		<dict>
@@ -3354,6 +3678,42 @@
 			<key>uniqueIdentifier</key>
 			<string>29D1441C-0A59-42FD-A885-075BB7DEEA58</string>
 		</dict>
+		<key>2A3D350E-FF2C-4076-A0AA-2E4FDD7F16FC</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>2A3D350E-FF2C-4076-A0AA-2E4FDD7F16FC.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>signature</key>
+			<string>eyJibHVlcHJpbnRfYmx1ZXByaW50SWRlbnRpZmllciI6IjRCOTFGOEE0MjAzM0YyNjAwMDNBRkE3OCIsImJsdWVwcmludF9wcm92aWRlckZpbGVQYXRoU3RyaW5nIjoiXC9Vc2Vyc1wvbGVpc29uZ2FvXC9EZXNrdG9wXC9DUzMyXC9NYXJibGVNYWRuZXNzXC9NYXJibGVNYWRuZXNzLnhjb2RlcHJvaiIsInR5cGUiOnsiYmx1ZXByaW50Ijp7fX19</string>
+			<key>timeStartedRecording</key>
+			<real>730341549.625844</real>
+			<key>timeStoppedRecording</key>
+			<real>63113904000</real>
+			<key>title</key>
+			<string>Build MarbleMadness</string>
+			<key>uniqueIdentifier</key>
+			<string>2A3D350E-FF2C-4076-A0AA-2E4FDD7F16FC</string>
+		</dict>
 		<key>2A83CFA3-6EF3-4D00-8A39-55B0637CD6E3</key>
 		<dict>
 			<key>className</key>
@@ -3497,6 +3857,42 @@
 			<string>Build MarbleMadness</string>
 			<key>uniqueIdentifier</key>
 			<string>2D9DBB60-1479-44D8-A684-E28C9CE05E20</string>
+		</dict>
+		<key>2DBBF778-1260-4B92-B1B8-F44486B203E8</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>2DBBF778-1260-4B92-B1B8-F44486B203E8.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>signature</key>
+			<string>eyJibHVlcHJpbnRfYmx1ZXByaW50SWRlbnRpZmllciI6IjRCOTFGOEE0MjAzM0YyNjAwMDNBRkE3OCIsImJsdWVwcmludF9wcm92aWRlckZpbGVQYXRoU3RyaW5nIjoiXC9Vc2Vyc1wvbGVpc29uZ2FvXC9EZXNrdG9wXC9DUzMyXC9NYXJibGVNYWRuZXNzXC9NYXJibGVNYWRuZXNzLnhjb2RlcHJvaiIsInR5cGUiOnsiYmx1ZXByaW50Ijp7fX19</string>
+			<key>timeStartedRecording</key>
+			<real>730341344.18227899</real>
+			<key>timeStoppedRecording</key>
+			<real>730341344.23086405</real>
+			<key>title</key>
+			<string>Build MarbleMadness</string>
+			<key>uniqueIdentifier</key>
+			<string>2DBBF778-1260-4B92-B1B8-F44486B203E8</string>
 		</dict>
 		<key>2F0FC8CD-FF77-4DC1-B287-8CD8F90E5393</key>
 		<dict>
@@ -3858,6 +4254,42 @@
 			<key>uniqueIdentifier</key>
 			<string>321196EB-AAD1-41A6-A1B4-9EDDC3416174</string>
 		</dict>
+		<key>326AA583-2413-4BF6-91D5-4C77CDCF2954</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>326AA583-2413-4BF6-91D5-4C77CDCF2954.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>signature</key>
+			<string>eyJibHVlcHJpbnRfYmx1ZXByaW50SWRlbnRpZmllciI6IjRCOTFGOEE0MjAzM0YyNjAwMDNBRkE3OCIsImJsdWVwcmludF9wcm92aWRlckZpbGVQYXRoU3RyaW5nIjoiXC9Vc2Vyc1wvbGVpc29uZ2FvXC9EZXNrdG9wXC9DUzMyXC9NYXJibGVNYWRuZXNzXC9NYXJibGVNYWRuZXNzLnhjb2RlcHJvaiIsInR5cGUiOnsiYmx1ZXByaW50Ijp7fX19</string>
+			<key>timeStartedRecording</key>
+			<real>730341363.52611101</real>
+			<key>timeStoppedRecording</key>
+			<real>63113904000</real>
+			<key>title</key>
+			<string>Build MarbleMadness</string>
+			<key>uniqueIdentifier</key>
+			<string>326AA583-2413-4BF6-91D5-4C77CDCF2954</string>
+		</dict>
 		<key>33CE5622-6E28-422A-BAC3-4C4A980F7E01</key>
 		<dict>
 			<key>className</key>
@@ -4037,6 +4469,42 @@
 			<string>Build MarbleMadness</string>
 			<key>uniqueIdentifier</key>
 			<string>34A4DCE4-A6B4-4575-B9DA-8BA57DF9C367</string>
+		</dict>
+		<key>34C78B9F-6462-49F7-BF0F-56E7389D3637</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>34C78B9F-6462-49F7-BF0F-56E7389D3637.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>signature</key>
+			<string>eyJidWlsZFN5c3RlbVRhc2tfYnVpbGRUYXNrIjoiUHJlcGFyZSBidWlsZCIsInR5cGUiOnsiYnVpbGRTeXN0ZW1UYXNrIjp7fX19</string>
+			<key>timeStartedRecording</key>
+			<real>730341996.78991699</real>
+			<key>timeStoppedRecording</key>
+			<real>63113904000</real>
+			<key>title</key>
+			<string>Build MarbleMadness</string>
+			<key>uniqueIdentifier</key>
+			<string>34C78B9F-6462-49F7-BF0F-56E7389D3637</string>
 		</dict>
 		<key>35209921-CF01-450E-B73C-4867D03C53BD</key>
 		<dict>
@@ -5009,6 +5477,42 @@
 			<string>Build MarbleMadness</string>
 			<key>uniqueIdentifier</key>
 			<string>40B1C53B-5DE9-48C9-BE91-0D877BDAC886</string>
+		</dict>
+		<key>41003CC2-0601-4B8F-B4A5-1EA954BF2133</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>41003CC2-0601-4B8F-B4A5-1EA954BF2133.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>signature</key>
+			<string>eyJibHVlcHJpbnRQcm92aWRlcl9wcm92aWRlckZpbGVQYXRoU3RyaW5nIjoiXC9Vc2Vyc1wvbGVpc29uZ2FvXC9EZXNrdG9wXC9DUzMyXC9NYXJibGVNYWRuZXNzXC9NYXJibGVNYWRuZXNzLnhjb2RlcHJvaiIsInR5cGUiOnsiYmx1ZXByaW50UHJvdmlkZXIiOnt9fX0=</string>
+			<key>timeStartedRecording</key>
+			<real>730341951.61633098</real>
+			<key>timeStoppedRecording</key>
+			<real>63113904000</real>
+			<key>title</key>
+			<string>Build MarbleMadness</string>
+			<key>uniqueIdentifier</key>
+			<string>41003CC2-0601-4B8F-B4A5-1EA954BF2133</string>
 		</dict>
 		<key>4137DCEF-8532-4BB8-B34F-A118A2639464</key>
 		<dict>
@@ -6053,6 +6557,42 @@
 			<string>Build MarbleMadness</string>
 			<key>uniqueIdentifier</key>
 			<string>4EA67D34-B7DF-4882-B5AF-FD274FFC0EF2</string>
+		</dict>
+		<key>506D2F66-8D68-4450-960D-51BDFCCEC7C5</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>506D2F66-8D68-4450-960D-51BDFCCEC7C5.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>signature</key>
+			<string>eyJidWlsZFN5c3RlbVRhc2tfYnVpbGRUYXNrIjoiUHJlcGFyZSBidWlsZCIsInR5cGUiOnsiYnVpbGRTeXN0ZW1UYXNrIjp7fX19</string>
+			<key>timeStartedRecording</key>
+			<real>730341462.673388</real>
+			<key>timeStoppedRecording</key>
+			<real>63113904000</real>
+			<key>title</key>
+			<string>Build MarbleMadness</string>
+			<key>uniqueIdentifier</key>
+			<string>506D2F66-8D68-4450-960D-51BDFCCEC7C5</string>
 		</dict>
 		<key>50A5CC1C-9CA1-416C-9CE4-82D55D213761</key>
 		<dict>
@@ -7458,6 +7998,42 @@
 			<key>uniqueIdentifier</key>
 			<string>5EAFC24B-B425-4869-BB75-0D910A71FBA6</string>
 		</dict>
+		<key>5F04C748-328B-41E8-A7EE-2129354D1E3D</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>5F04C748-328B-41E8-A7EE-2129354D1E3D.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>signature</key>
+			<string>eyJibHVlcHJpbnRfYmx1ZXByaW50SWRlbnRpZmllciI6IjRCOTFGOEE0MjAzM0YyNjAwMDNBRkE3OCIsImJsdWVwcmludF9wcm92aWRlckZpbGVQYXRoU3RyaW5nIjoiXC9Vc2Vyc1wvbGVpc29uZ2FvXC9EZXNrdG9wXC9DUzMyXC9NYXJibGVNYWRuZXNzXC9NYXJibGVNYWRuZXNzLnhjb2RlcHJvaiIsInR5cGUiOnsiYmx1ZXByaW50Ijp7fX19</string>
+			<key>timeStartedRecording</key>
+			<real>730341996.78991699</real>
+			<key>timeStoppedRecording</key>
+			<real>63113904000</real>
+			<key>title</key>
+			<string>Build MarbleMadness</string>
+			<key>uniqueIdentifier</key>
+			<string>5F04C748-328B-41E8-A7EE-2129354D1E3D</string>
+		</dict>
 		<key>600E335A-4EE0-4CA3-8A5D-72CAFE00B305</key>
 		<dict>
 			<key>className</key>
@@ -8502,6 +9078,42 @@
 			<key>uniqueIdentifier</key>
 			<string>6AB0E97E-6E92-42FC-BC5A-4E087B4631CC</string>
 		</dict>
+		<key>6AF0694F-9974-4598-9DEC-F0DCF54BB7A2</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>6AF0694F-9974-4598-9DEC-F0DCF54BB7A2.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>signature</key>
+			<string>eyJidWlsZFN5c3RlbVRhc2tfYnVpbGRUYXNrIjoiUHJlcGFyZSBidWlsZCIsInR5cGUiOnsiYnVpbGRTeXN0ZW1UYXNrIjp7fX19</string>
+			<key>timeStartedRecording</key>
+			<real>730341363.52611101</real>
+			<key>timeStoppedRecording</key>
+			<real>63113904000</real>
+			<key>title</key>
+			<string>Build MarbleMadness</string>
+			<key>uniqueIdentifier</key>
+			<string>6AF0694F-9974-4598-9DEC-F0DCF54BB7A2</string>
+		</dict>
 		<key>6BC26564-BAF4-413C-A5AB-EA4F4F7566ED</key>
 		<dict>
 			<key>className</key>
@@ -9257,6 +9869,42 @@
 			<string>Build MarbleMadness</string>
 			<key>uniqueIdentifier</key>
 			<string>77524E61-17F8-48BE-BC4E-651980567BD9</string>
+		</dict>
+		<key>77810A96-A7BF-4500-ACF8-94F3CE9ED928</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>77810A96-A7BF-4500-ACF8-94F3CE9ED928.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>signature</key>
+			<string>eyJibHVlcHJpbnRQcm92aWRlcl9wcm92aWRlckZpbGVQYXRoU3RyaW5nIjoiXC9Vc2Vyc1wvbGVpc29uZ2FvXC9EZXNrdG9wXC9DUzMyXC9NYXJibGVNYWRuZXNzXC9NYXJibGVNYWRuZXNzLnhjb2RlcHJvaiIsInR5cGUiOnsiYmx1ZXByaW50UHJvdmlkZXIiOnt9fX0=</string>
+			<key>timeStartedRecording</key>
+			<real>730341848.65694904</real>
+			<key>timeStoppedRecording</key>
+			<real>63113904000</real>
+			<key>title</key>
+			<string>Build MarbleMadness</string>
+			<key>uniqueIdentifier</key>
+			<string>77810A96-A7BF-4500-ACF8-94F3CE9ED928</string>
 		</dict>
 		<key>77E200BD-C7BB-4F1E-BFC4-3E5CA2A6BB29</key>
 		<dict>
@@ -10121,6 +10769,42 @@
 			<string>Build MarbleMadness</string>
 			<key>uniqueIdentifier</key>
 			<string>836CE7F0-1A0C-42F7-87BC-30C90E5EF47C</string>
+		</dict>
+		<key>83D687A5-BCCA-420B-8A97-63EACFF91835</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>83D687A5-BCCA-420B-8A97-63EACFF91835.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>signature</key>
+			<string>eyJibHVlcHJpbnRfYmx1ZXByaW50SWRlbnRpZmllciI6IjRCOTFGOEE0MjAzM0YyNjAwMDNBRkE3OCIsImJsdWVwcmludF9wcm92aWRlckZpbGVQYXRoU3RyaW5nIjoiXC9Vc2Vyc1wvbGVpc29uZ2FvXC9EZXNrdG9wXC9DUzMyXC9NYXJibGVNYWRuZXNzXC9NYXJibGVNYWRuZXNzLnhjb2RlcHJvaiIsInR5cGUiOnsiYmx1ZXByaW50Ijp7fX19</string>
+			<key>timeStartedRecording</key>
+			<real>730342844.14541805</real>
+			<key>timeStoppedRecording</key>
+			<real>63113904000</real>
+			<key>title</key>
+			<string>Build MarbleMadness</string>
+			<key>uniqueIdentifier</key>
+			<string>83D687A5-BCCA-420B-8A97-63EACFF91835</string>
 		</dict>
 		<key>83F96482-55BC-405A-B7BC-9182906D7FF6</key>
 		<dict>
@@ -11382,6 +12066,42 @@
 			<key>uniqueIdentifier</key>
 			<string>94AD90A2-72AE-459D-A7B3-8C96EAE76B01</string>
 		</dict>
+		<key>94EF8F83-4D37-4CA6-814E-E1219794DD42</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>94EF8F83-4D37-4CA6-814E-E1219794DD42.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>signature</key>
+			<string>eyJibHVlcHJpbnRQcm92aWRlcl9wcm92aWRlckZpbGVQYXRoU3RyaW5nIjoiXC9Vc2Vyc1wvbGVpc29uZ2FvXC9EZXNrdG9wXC9DUzMyXC9NYXJibGVNYWRuZXNzXC9NYXJibGVNYWRuZXNzLnhjb2RlcHJvaiIsInR5cGUiOnsiYmx1ZXByaW50UHJvdmlkZXIiOnt9fX0=</string>
+			<key>timeStartedRecording</key>
+			<real>730341462.673388</real>
+			<key>timeStoppedRecording</key>
+			<real>63113904000</real>
+			<key>title</key>
+			<string>Build MarbleMadness</string>
+			<key>uniqueIdentifier</key>
+			<string>94EF8F83-4D37-4CA6-814E-E1219794DD42</string>
+		</dict>
 		<key>9503F56A-697F-493D-AE3B-884378D637E1</key>
 		<dict>
 			<key>className</key>
@@ -11922,6 +12642,42 @@
 			<key>uniqueIdentifier</key>
 			<string>9B1594AC-D426-46C7-A573-F0193181789D</string>
 		</dict>
+		<key>9B188AB2-60BE-4AFD-A87A-B7D18BD58FBB</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>9B188AB2-60BE-4AFD-A87A-B7D18BD58FBB.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>signature</key>
+			<string>eyJibHVlcHJpbnRQcm92aWRlcl9wcm92aWRlckZpbGVQYXRoU3RyaW5nIjoiXC9Vc2Vyc1wvbGVpc29uZ2FvXC9EZXNrdG9wXC9DUzMyXC9NYXJibGVNYWRuZXNzXC9NYXJibGVNYWRuZXNzLnhjb2RlcHJvaiIsInR5cGUiOnsiYmx1ZXByaW50UHJvdmlkZXIiOnt9fX0=</string>
+			<key>timeStartedRecording</key>
+			<real>730341344.18227899</real>
+			<key>timeStoppedRecording</key>
+			<real>63113904000</real>
+			<key>title</key>
+			<string>Build MarbleMadness</string>
+			<key>uniqueIdentifier</key>
+			<string>9B188AB2-60BE-4AFD-A87A-B7D18BD58FBB</string>
+		</dict>
 		<key>9B4A3028-2E14-4BAF-85D0-9A8BA62F4E5C</key>
 		<dict>
 			<key>className</key>
@@ -11957,6 +12713,42 @@
 			<string>Build MarbleMadness</string>
 			<key>uniqueIdentifier</key>
 			<string>9B4A3028-2E14-4BAF-85D0-9A8BA62F4E5C</string>
+		</dict>
+		<key>9BD935E7-64A7-4FA9-AD4F-EEBAF7575606</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>9BD935E7-64A7-4FA9-AD4F-EEBAF7575606.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>signature</key>
+			<string>eyJidWlsZFN5c3RlbVRhc2tfYnVpbGRUYXNrIjoiUHJlcGFyZSBidWlsZCIsInR5cGUiOnsiYnVpbGRTeXN0ZW1UYXNrIjp7fX19</string>
+			<key>timeStartedRecording</key>
+			<real>730341344.18227899</real>
+			<key>timeStoppedRecording</key>
+			<real>730341344.23086405</real>
+			<key>title</key>
+			<string>Build MarbleMadness</string>
+			<key>uniqueIdentifier</key>
+			<string>9BD935E7-64A7-4FA9-AD4F-EEBAF7575606</string>
 		</dict>
 		<key>9BE982D3-00A4-482A-A33A-777AB16C391B</key>
 		<dict>
@@ -12498,6 +13290,42 @@
 			<key>uniqueIdentifier</key>
 			<string>A1E7AA67-18EB-42FD-AB41-BAB8F7EF1223</string>
 		</dict>
+		<key>A2255145-AC34-4C77-A0D6-03611CE86683</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>A2255145-AC34-4C77-A0D6-03611CE86683.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>1</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>signature</key>
+			<string>eyJibHVlcHJpbnRfYmx1ZXByaW50SWRlbnRpZmllciI6IjRCOTFGOEE0MjAzM0YyNjAwMDNBRkE3OCIsImJsdWVwcmludF9wcm92aWRlckZpbGVQYXRoU3RyaW5nIjoiXC9Vc2Vyc1wvbGVpc29uZ2FvXC9EZXNrdG9wXC9DUzMyXC9NYXJibGVNYWRuZXNzXC9NYXJibGVNYWRuZXNzLnhjb2RlcHJvaiIsInR5cGUiOnsiYmx1ZXByaW50Ijp7fX19</string>
+			<key>timeStartedRecording</key>
+			<real>730341848.65694904</real>
+			<key>timeStoppedRecording</key>
+			<real>63113904000</real>
+			<key>title</key>
+			<string>Build MarbleMadness</string>
+			<key>uniqueIdentifier</key>
+			<string>A2255145-AC34-4C77-A0D6-03611CE86683</string>
+		</dict>
 		<key>A22DEE00-BE40-4CC8-8CDD-D2F9603EC338</key>
 		<dict>
 			<key>className</key>
@@ -12533,6 +13361,42 @@
 			<string>Build MarbleMadness</string>
 			<key>uniqueIdentifier</key>
 			<string>A22DEE00-BE40-4CC8-8CDD-D2F9603EC338</string>
+		</dict>
+		<key>A2D5217F-E554-4C6A-A32B-D070CFEFCA6F</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>A2D5217F-E554-4C6A-A32B-D070CFEFCA6F.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>signature</key>
+			<string>eyJidWlsZFN5c3RlbVRhc2tfYnVpbGRUYXNrIjoiUHJlcGFyZSBidWlsZCIsInR5cGUiOnsiYnVpbGRTeXN0ZW1UYXNrIjp7fX19</string>
+			<key>timeStartedRecording</key>
+			<real>730341901.96859205</real>
+			<key>timeStoppedRecording</key>
+			<real>63113904000</real>
+			<key>title</key>
+			<string>Build MarbleMadness</string>
+			<key>uniqueIdentifier</key>
+			<string>A2D5217F-E554-4C6A-A32B-D070CFEFCA6F</string>
 		</dict>
 		<key>A312FFA4-4FF6-4090-BB92-46237271546F</key>
 		<dict>
@@ -12641,6 +13505,42 @@
 			<string>Build MarbleMadness</string>
 			<key>uniqueIdentifier</key>
 			<string>A4E483C5-34AA-4315-AAFF-B8780FDD1920</string>
+		</dict>
+		<key>A567D17A-098F-4199-8E5D-A315AE9DEEF1</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>A567D17A-098F-4199-8E5D-A315AE9DEEF1.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>signature</key>
+			<string>eyJibHVlcHJpbnRQcm92aWRlcl9wcm92aWRlckZpbGVQYXRoU3RyaW5nIjoiXC9Vc2Vyc1wvbGVpc29uZ2FvXC9EZXNrdG9wXC9DUzMyXC9NYXJibGVNYWRuZXNzXC9NYXJibGVNYWRuZXNzLnhjb2RlcHJvaiIsInR5cGUiOnsiYmx1ZXByaW50UHJvdmlkZXIiOnt9fX0=</string>
+			<key>timeStartedRecording</key>
+			<real>730341363.52611101</real>
+			<key>timeStoppedRecording</key>
+			<real>63113904000</real>
+			<key>title</key>
+			<string>Build MarbleMadness</string>
+			<key>uniqueIdentifier</key>
+			<string>A567D17A-098F-4199-8E5D-A315AE9DEEF1</string>
 		</dict>
 		<key>A569DFB4-DB3B-409D-8533-1447908A68CD</key>
 		<dict>
@@ -12930,6 +13830,42 @@
 			<key>uniqueIdentifier</key>
 			<string>A9CE92E6-BA1E-4888-BAE9-AA53BB24F7EC</string>
 		</dict>
+		<key>A9D12F0F-6389-44E4-87B7-A22D1D4FD8AC</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>A9D12F0F-6389-44E4-87B7-A22D1D4FD8AC.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>signature</key>
+			<string>eyJibHVlcHJpbnRQcm92aWRlcl9wcm92aWRlckZpbGVQYXRoU3RyaW5nIjoiXC9Vc2Vyc1wvbGVpc29uZ2FvXC9EZXNrdG9wXC9DUzMyXC9NYXJibGVNYWRuZXNzXC9NYXJibGVNYWRuZXNzLnhjb2RlcHJvaiIsInR5cGUiOnsiYmx1ZXByaW50UHJvdmlkZXIiOnt9fX0=</string>
+			<key>timeStartedRecording</key>
+			<real>730341385.73700404</real>
+			<key>timeStoppedRecording</key>
+			<real>63113904000</real>
+			<key>title</key>
+			<string>Build MarbleMadness</string>
+			<key>uniqueIdentifier</key>
+			<string>A9D12F0F-6389-44E4-87B7-A22D1D4FD8AC</string>
+		</dict>
 		<key>A9DF7911-5EBD-4A89-A396-D9B5EE05F949</key>
 		<dict>
 			<key>className</key>
@@ -12965,6 +13901,42 @@
 			<string>Build MarbleMadness</string>
 			<key>uniqueIdentifier</key>
 			<string>A9DF7911-5EBD-4A89-A396-D9B5EE05F949</string>
+		</dict>
+		<key>AA909DE5-0023-4134-8982-43E7D5C1BBBF</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>AA909DE5-0023-4134-8982-43E7D5C1BBBF.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>signature</key>
+			<string>eyJibHVlcHJpbnRQcm92aWRlcl9wcm92aWRlckZpbGVQYXRoU3RyaW5nIjoiXC9Vc2Vyc1wvbGVpc29uZ2FvXC9EZXNrdG9wXC9DUzMyXC9NYXJibGVNYWRuZXNzXC9NYXJibGVNYWRuZXNzLnhjb2RlcHJvaiIsInR5cGUiOnsiYmx1ZXByaW50UHJvdmlkZXIiOnt9fX0=</string>
+			<key>timeStartedRecording</key>
+			<real>730341982.37644196</real>
+			<key>timeStoppedRecording</key>
+			<real>63113904000</real>
+			<key>title</key>
+			<string>Build MarbleMadness</string>
+			<key>uniqueIdentifier</key>
+			<string>AA909DE5-0023-4134-8982-43E7D5C1BBBF</string>
 		</dict>
 		<key>ABCA114F-68C4-4293-A9AC-F32B0085BE25</key>
 		<dict>
@@ -13686,6 +14658,42 @@
 			<key>uniqueIdentifier</key>
 			<string>B5F298E2-390D-4873-87E6-D55812F91A33</string>
 		</dict>
+		<key>B738BF3C-B07D-4A4B-9940-4F5C3ED1D6D4</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>B738BF3C-B07D-4A4B-9940-4F5C3ED1D6D4.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>6</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>signature</key>
+			<string>eyJibHVlcHJpbnRfYmx1ZXByaW50SWRlbnRpZmllciI6IjRCOTFGOEE0MjAzM0YyNjAwMDNBRkE3OCIsImJsdWVwcmludF9wcm92aWRlckZpbGVQYXRoU3RyaW5nIjoiXC9Vc2Vyc1wvbGVpc29uZ2FvXC9EZXNrdG9wXC9DUzMyXC9NYXJibGVNYWRuZXNzXC9NYXJibGVNYWRuZXNzLnhjb2RlcHJvaiIsInR5cGUiOnsiYmx1ZXByaW50Ijp7fX19</string>
+			<key>timeStartedRecording</key>
+			<real>730341974.750314</real>
+			<key>timeStoppedRecording</key>
+			<real>63113904000</real>
+			<key>title</key>
+			<string>Build MarbleMadness</string>
+			<key>uniqueIdentifier</key>
+			<string>B738BF3C-B07D-4A4B-9940-4F5C3ED1D6D4</string>
+		</dict>
 		<key>B7D7F639-CF04-476D-B30B-19A584994596</key>
 		<dict>
 			<key>className</key>
@@ -14333,6 +15341,42 @@
 			<string>Build MarbleMadness</string>
 			<key>uniqueIdentifier</key>
 			<string>C1C7B1E6-8CC2-459D-9A03-6A690C6859DD</string>
+		</dict>
+		<key>C24EE469-0171-4963-81E4-2236CB5CF6DD</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>C24EE469-0171-4963-81E4-2236CB5CF6DD.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>2</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>signature</key>
+			<string>eyJibHVlcHJpbnRfYmx1ZXByaW50SWRlbnRpZmllciI6IjRCOTFGOEE0MjAzM0YyNjAwMDNBRkE3OCIsImJsdWVwcmludF9wcm92aWRlckZpbGVQYXRoU3RyaW5nIjoiXC9Vc2Vyc1wvbGVpc29uZ2FvXC9EZXNrdG9wXC9DUzMyXC9NYXJibGVNYWRuZXNzXC9NYXJibGVNYWRuZXNzLnhjb2RlcHJvaiIsInR5cGUiOnsiYmx1ZXByaW50Ijp7fX19</string>
+			<key>timeStartedRecording</key>
+			<real>730341982.37644196</real>
+			<key>timeStoppedRecording</key>
+			<real>63113904000</real>
+			<key>title</key>
+			<string>Build MarbleMadness</string>
+			<key>uniqueIdentifier</key>
+			<string>C24EE469-0171-4963-81E4-2236CB5CF6DD</string>
 		</dict>
 		<key>C2629065-542C-4DD3-BA1A-1C41519F13A4</key>
 		<dict>
@@ -16278,6 +17322,42 @@
 			<key>uniqueIdentifier</key>
 			<string>DA30C969-0180-4258-A5ED-C7BE0BBD6B29</string>
 		</dict>
+		<key>DA4D2B48-4649-4F92-838F-B6A1ABB54821</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>DA4D2B48-4649-4F92-838F-B6A1ABB54821.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>signature</key>
+			<string>eyJibHVlcHJpbnRQcm92aWRlcl9wcm92aWRlckZpbGVQYXRoU3RyaW5nIjoiXC9Vc2Vyc1wvbGVpc29uZ2FvXC9EZXNrdG9wXC9DUzMyXC9NYXJibGVNYWRuZXNzXC9NYXJibGVNYWRuZXNzLnhjb2RlcHJvaiIsInR5cGUiOnsiYmx1ZXByaW50UHJvdmlkZXIiOnt9fX0=</string>
+			<key>timeStartedRecording</key>
+			<real>730341549.625844</real>
+			<key>timeStoppedRecording</key>
+			<real>63113904000</real>
+			<key>title</key>
+			<string>Build MarbleMadness</string>
+			<key>uniqueIdentifier</key>
+			<string>DA4D2B48-4649-4F92-838F-B6A1ABB54821</string>
+		</dict>
 		<key>DB1AF321-4CCA-4C32-81E2-8F0C74766CF4</key>
 		<dict>
 			<key>className</key>
@@ -16349,6 +17429,42 @@
 			<string>Build MarbleMadness</string>
 			<key>uniqueIdentifier</key>
 			<string>DB9B5787-C7FA-47AC-9985-00A280EDAABB</string>
+		</dict>
+		<key>DBF9C1F3-3D40-4B62-B152-73B0C887103A</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>DBF9C1F3-3D40-4B62-B152-73B0C887103A.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>14</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>signature</key>
+			<string>eyJibHVlcHJpbnRfYmx1ZXByaW50SWRlbnRpZmllciI6IjRCOTFGOEE0MjAzM0YyNjAwMDNBRkE3OCIsImJsdWVwcmludF9wcm92aWRlckZpbGVQYXRoU3RyaW5nIjoiXC9Vc2Vyc1wvbGVpc29uZ2FvXC9EZXNrdG9wXC9DUzMyXC9NYXJibGVNYWRuZXNzXC9NYXJibGVNYWRuZXNzLnhjb2RlcHJvaiIsInR5cGUiOnsiYmx1ZXByaW50Ijp7fX19</string>
+			<key>timeStartedRecording</key>
+			<real>730341901.96859205</real>
+			<key>timeStoppedRecording</key>
+			<real>63113904000</real>
+			<key>title</key>
+			<string>Build MarbleMadness</string>
+			<key>uniqueIdentifier</key>
+			<string>DBF9C1F3-3D40-4B62-B152-73B0C887103A</string>
 		</dict>
 		<key>DC2718FA-DF9B-4CA5-BFF5-7A74B53D436A</key>
 		<dict>
@@ -16962,6 +18078,42 @@
 			<key>uniqueIdentifier</key>
 			<string>E0B98974-46B9-4DC8-836D-B73509E04922</string>
 		</dict>
+		<key>E12F9914-54C7-4424-8B1E-7D2E847189AF</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>E12F9914-54C7-4424-8B1E-7D2E847189AF.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>signature</key>
+			<string>eyJidWlsZFN5c3RlbVRhc2tfYnVpbGRUYXNrIjoiUHJlcGFyZSBidWlsZCIsInR5cGUiOnsiYnVpbGRTeXN0ZW1UYXNrIjp7fX19</string>
+			<key>timeStartedRecording</key>
+			<real>730341974.750314</real>
+			<key>timeStoppedRecording</key>
+			<real>63113904000</real>
+			<key>title</key>
+			<string>Build MarbleMadness</string>
+			<key>uniqueIdentifier</key>
+			<string>E12F9914-54C7-4424-8B1E-7D2E847189AF</string>
+		</dict>
 		<key>E25AA200-D85E-4AC9-A377-001356B164DA</key>
 		<dict>
 			<key>className</key>
@@ -17106,6 +18258,42 @@
 			<key>uniqueIdentifier</key>
 			<string>E364ACE0-B058-4253-BF40-B9142C2DAA7F</string>
 		</dict>
+		<key>E3F7AC0B-C84B-4664-A98B-E7A1ECD4ADFD</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>E3F7AC0B-C84B-4664-A98B-E7A1ECD4ADFD.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>signature</key>
+			<string>eyJidWlsZFN5c3RlbVRhc2tfYnVpbGRUYXNrIjoiUHJlcGFyZSBidWlsZCIsInR5cGUiOnsiYnVpbGRTeXN0ZW1UYXNrIjp7fX19</string>
+			<key>timeStartedRecording</key>
+			<real>730341982.37644196</real>
+			<key>timeStoppedRecording</key>
+			<real>63113904000</real>
+			<key>title</key>
+			<string>Build MarbleMadness</string>
+			<key>uniqueIdentifier</key>
+			<string>E3F7AC0B-C84B-4664-A98B-E7A1ECD4ADFD</string>
+		</dict>
 		<key>E4A61C04-353B-469C-8020-1598136C246B</key>
 		<dict>
 			<key>className</key>
@@ -17141,6 +18329,42 @@
 			<string>Build MarbleMadness</string>
 			<key>uniqueIdentifier</key>
 			<string>E4A61C04-353B-469C-8020-1598136C246B</string>
+		</dict>
+		<key>E570F9ED-209A-4D06-9908-DD59608734B7</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>E570F9ED-209A-4D06-9908-DD59608734B7.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>signature</key>
+			<string>eyJidWlsZFN5c3RlbVRhc2tfYnVpbGRUYXNrIjoiUHJlcGFyZSBidWlsZCIsInR5cGUiOnsiYnVpbGRTeXN0ZW1UYXNrIjp7fX19</string>
+			<key>timeStartedRecording</key>
+			<real>730341385.73700404</real>
+			<key>timeStoppedRecording</key>
+			<real>730341385.78747499</real>
+			<key>title</key>
+			<string>Build MarbleMadness</string>
+			<key>uniqueIdentifier</key>
+			<string>E570F9ED-209A-4D06-9908-DD59608734B7</string>
 		</dict>
 		<key>E5A7B255-0293-474F-B969-1EC938925566</key>
 		<dict>
@@ -17429,6 +18653,42 @@
 			<string>Build MarbleMadness</string>
 			<key>uniqueIdentifier</key>
 			<string>EB791659-FFE9-44CC-93EB-B85103214FC5</string>
+		</dict>
+		<key>EBBC1273-EC22-481C-8057-8A2DBCEDFC30</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>EBBC1273-EC22-481C-8057-8A2DBCEDFC30.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>signature</key>
+			<string>eyJidWlsZFN5c3RlbVRhc2tfYnVpbGRUYXNrIjoiUHJlcGFyZSBidWlsZCIsInR5cGUiOnsiYnVpbGRTeXN0ZW1UYXNrIjp7fX19</string>
+			<key>timeStartedRecording</key>
+			<real>730342844.14541805</real>
+			<key>timeStoppedRecording</key>
+			<real>63113904000</real>
+			<key>title</key>
+			<string>Build MarbleMadness</string>
+			<key>uniqueIdentifier</key>
+			<string>EBBC1273-EC22-481C-8057-8A2DBCEDFC30</string>
 		</dict>
 		<key>ED512F34-D995-4DAE-A5E4-597D5A262C7A</key>
 		<dict>
@@ -17753,6 +19013,42 @@
 			<string>Build MarbleMadness</string>
 			<key>uniqueIdentifier</key>
 			<string>F1A1595F-054D-4CBC-A4CC-ACBAFED4BCB1</string>
+		</dict>
+		<key>F2C43FF1-86E9-4309-93C4-76835B7CCF41</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>F2C43FF1-86E9-4309-93C4-76835B7CCF41.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>signature</key>
+			<string>eyJibHVlcHJpbnRQcm92aWRlcl9wcm92aWRlckZpbGVQYXRoU3RyaW5nIjoiXC9Vc2Vyc1wvbGVpc29uZ2FvXC9EZXNrdG9wXC9DUzMyXC9NYXJibGVNYWRuZXNzXC9NYXJibGVNYWRuZXNzLnhjb2RlcHJvaiIsInR5cGUiOnsiYmx1ZXByaW50UHJvdmlkZXIiOnt9fX0=</string>
+			<key>timeStartedRecording</key>
+			<real>730341996.78991699</real>
+			<key>timeStoppedRecording</key>
+			<real>63113904000</real>
+			<key>title</key>
+			<string>Build MarbleMadness</string>
+			<key>uniqueIdentifier</key>
+			<string>F2C43FF1-86E9-4309-93C4-76835B7CCF41</string>
 		</dict>
 		<key>F2EE8D76-3E1F-4315-9195-0AA408BEFC1C</key>
 		<dict>
@@ -18222,6 +19518,42 @@
 			<key>uniqueIdentifier</key>
 			<string>F83666D3-03A9-429D-BBAB-65CEBF80FB30</string>
 		</dict>
+		<key>F8667BA0-FAF7-442B-BC4F-AA03D06FFBBC</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>F8667BA0-FAF7-442B-BC4F-AA03D06FFBBC.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>10</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>signature</key>
+			<string>eyJibHVlcHJpbnRfYmx1ZXByaW50SWRlbnRpZmllciI6IjRCOTFGOEE0MjAzM0YyNjAwMDNBRkE3OCIsImJsdWVwcmludF9wcm92aWRlckZpbGVQYXRoU3RyaW5nIjoiXC9Vc2Vyc1wvbGVpc29uZ2FvXC9EZXNrdG9wXC9DUzMyXC9NYXJibGVNYWRuZXNzXC9NYXJibGVNYWRuZXNzLnhjb2RlcHJvaiIsInR5cGUiOnsiYmx1ZXByaW50Ijp7fX19</string>
+			<key>timeStartedRecording</key>
+			<real>730341951.61633098</real>
+			<key>timeStoppedRecording</key>
+			<real>63113904000</real>
+			<key>title</key>
+			<string>Build MarbleMadness</string>
+			<key>uniqueIdentifier</key>
+			<string>F8667BA0-FAF7-442B-BC4F-AA03D06FFBBC</string>
+		</dict>
 		<key>F8DE3146-0335-4C51-9E1E-47DDC36FA6CB</key>
 		<dict>
 			<key>className</key>
@@ -18257,6 +19589,42 @@
 			<string>Build MarbleMadness</string>
 			<key>uniqueIdentifier</key>
 			<string>F8DE3146-0335-4C51-9E1E-47DDC36FA6CB</string>
+		</dict>
+		<key>FA49D019-2715-48A2-9DC3-BB34FC5EB55D</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>FA49D019-2715-48A2-9DC3-BB34FC5EB55D.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>signature</key>
+			<string>eyJibHVlcHJpbnRQcm92aWRlcl9wcm92aWRlckZpbGVQYXRoU3RyaW5nIjoiXC9Vc2Vyc1wvbGVpc29uZ2FvXC9EZXNrdG9wXC9DUzMyXC9NYXJibGVNYWRuZXNzXC9NYXJibGVNYWRuZXNzLnhjb2RlcHJvaiIsInR5cGUiOnsiYmx1ZXByaW50UHJvdmlkZXIiOnt9fX0=</string>
+			<key>timeStartedRecording</key>
+			<real>730341297.01522398</real>
+			<key>timeStoppedRecording</key>
+			<real>63113904000</real>
+			<key>title</key>
+			<string>Build MarbleMadness</string>
+			<key>uniqueIdentifier</key>
+			<string>FA49D019-2715-48A2-9DC3-BB34FC5EB55D</string>
 		</dict>
 		<key>FA701FA9-57A8-478D-8687-3779A3736764</key>
 		<dict>
@@ -18653,6 +20021,42 @@
 			<string>Build MarbleMadness</string>
 			<key>uniqueIdentifier</key>
 			<string>FEB1D79D-A206-4AD3-A2AB-EABB7FC92595</string>
+		</dict>
+		<key>FECAC04F-5AC9-4370-BEA3-7DBB6F869748</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>FECAC04F-5AC9-4370-BEA3-7DBB6F869748.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>signature</key>
+			<string>eyJibHVlcHJpbnRfYmx1ZXByaW50SWRlbnRpZmllciI6IjRCOTFGOEE0MjAzM0YyNjAwMDNBRkE3OCIsImJsdWVwcmludF9wcm92aWRlckZpbGVQYXRoU3RyaW5nIjoiXC9Vc2Vyc1wvbGVpc29uZ2FvXC9EZXNrdG9wXC9DUzMyXC9NYXJibGVNYWRuZXNzXC9NYXJibGVNYWRuZXNzLnhjb2RlcHJvaiIsInR5cGUiOnsiYmx1ZXByaW50Ijp7fX19</string>
+			<key>timeStartedRecording</key>
+			<real>730341385.73700404</real>
+			<key>timeStoppedRecording</key>
+			<real>730341385.78747499</real>
+			<key>title</key>
+			<string>Build MarbleMadness</string>
+			<key>uniqueIdentifier</key>
+			<string>FECAC04F-5AC9-4370-BEA3-7DBB6F869748</string>
 		</dict>
 		<key>FEF52209-0D31-42CC-B876-1708323CAD2F</key>
 		<dict>

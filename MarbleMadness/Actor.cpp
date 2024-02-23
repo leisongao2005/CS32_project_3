@@ -21,22 +21,22 @@ void Avatar::doSomething() {
                 break;
             case KEY_PRESS_UP:
                 setDirection(up);
-                if (!getWorld()->isObstructed(getX(), getY() + 1, up))
+                if (!getWorld()->isObstructed(getX(), getY() + 1, up, this))
                     moveTo(getX(), getY() + 1);
                 break;
             case KEY_PRESS_DOWN:
                 setDirection(down);
-                if (!getWorld()->isObstructed(getX(), getY() - 1, down))
+                if (!getWorld()->isObstructed(getX(), getY() - 1, down, this))
                     moveTo(getX(), getY() - 1);
                 break;
             case KEY_PRESS_LEFT:
                 setDirection(left);
-                if (!getWorld()->isObstructed(getX() - 1, getY(), left))
+                if (!getWorld()->isObstructed(getX() - 1, getY(), left, this))
                     moveTo(getX() - 1, getY());
                 break;
             case KEY_PRESS_RIGHT:
                 setDirection(right);
-                if (!getWorld()->isObstructed(getX() + 1, getY(), right))
+                if (!getWorld()->isObstructed(getX() + 1, getY(), right, this))
                     moveTo(getX() + 1, getY());
                 break;
         }
@@ -82,7 +82,7 @@ bool Marble::getAttacked() {
     return true;
 }
 
-bool Marble::canPush(int direction) {
+bool Marble::canPush(int direction, Actor* pusher) {
     int next_x = -1, next_y = -1;
     switch (direction) {
         case up:
@@ -102,9 +102,11 @@ bool Marble::canPush(int direction) {
             next_y = getY();
             break;
     }
-    if (getWorld()->isPit(next_x, next_y) || getWorld()->isEmpty(next_x, next_y)) {
-        moveTo(next_x, next_y);
-        return true;
+    if (pusher->isPlayer()) {
+        if (getWorld()->isPit(next_x, next_y) || getWorld()->isEmpty(next_x, next_y)) {
+            moveTo(next_x, next_y);
+            return true;
+        }
     }
     return false;
 }
@@ -236,25 +238,25 @@ void RageBot::doSomething() {
         else {
             switch(getDirection()) {
                 case up:
-                    if (!getWorld()->isObstructed(getX(), getY() + 1, up))
+                    if (!getWorld()->isObstructed(getX(), getY() + 1, up, this))
                         moveTo(getX(), getY() + 1);
                     else
                         setDirection(getDirection() + 180);
                     break;
                 case down:
-                    if (!getWorld()->isObstructed(getX(), getY() - 1, down))
+                    if (!getWorld()->isObstructed(getX(), getY() - 1, down, this))
                         moveTo(getX(), getY() - 1);
                     else
                         setDirection(getDirection() + 180);
                     break;
                 case left:
-                    if (!getWorld()->isObstructed(getX() - 1, getY(), left))
+                    if (!getWorld()->isObstructed(getX() - 1, getY(), left, this))
                         moveTo(getX() - 1, getY());
                     else
                         setDirection(getDirection() + 180);
                     break;
                 case right:
-                    if (!getWorld()->isObstructed(getX() + 1, getY(), right))
+                    if (!getWorld()->isObstructed(getX() + 1, getY(), right, this))
                         moveTo(getX() + 1, getY());
                     else
                         setDirection(getDirection() + 180);
@@ -280,22 +282,22 @@ bool RageBot::getAttacked() {
 void ThiefBot::move() {
     switch(getDirection()) {
         case up:
-            if (!getWorld()->isObstructed(getX(), getY() + 1, up)) {
+            if (!getWorld()->isObstructed(getX(), getY() + 1, up, this)) {
                 moveTo(getX(), getY() + 1);
                 return;
             }
         case down:
-            if (!getWorld()->isObstructed(getX(), getY() - 1, down)) {
+            if (!getWorld()->isObstructed(getX(), getY() - 1, down, this)) {
                 moveTo(getX(), getY() - 1);
                 return;
             }
         case left:
-            if (!getWorld()->isObstructed(getX() - 1, getY(), left)) {
+            if (!getWorld()->isObstructed(getX() - 1, getY(), left, this)) {
                 moveTo(getX() - 1, getY());
                 return;
             }
         case right:
-            if (!getWorld()->isObstructed(getX() + 1, getY(), right)) {
+            if (!getWorld()->isObstructed(getX() + 1, getY(), right, this)) {
                 moveTo(getX() + 1, getY());
                 return;
             }
@@ -320,7 +322,7 @@ void ThiefBot::doSomething() {
             while (dir.size() != 0) {
                 int pos = randInt(0, int(dir.size()) - 1);
                 setDirection(dir.at(pos));
-                if (!getWorld()->isObstructed(getX(), getY(), getDirection())) {
+                if (!getWorld()->isObstructed(getX(), getY(), getDirection(), this)) {
                     move();
                     return;
                 }
@@ -368,7 +370,7 @@ void MeanThiefBot::doSomething() {
                 while (dir.size() != 0) {
                     int pos = randInt(0, int(dir.size()) - 1);
                     setDirection(dir.at(pos));
-                    if (!getWorld()->isObstructed(getX(), getY(), getDirection())) {
+                    if (!getWorld()->isObstructed(getX(), getY(), getDirection(), this)) {
                         move();
                         return;
                     }
@@ -393,5 +395,30 @@ bool MeanThiefBot::getAttacked() {
         getWorld()->playSound(SOUND_ROBOT_IMPACT);
     }
     return true;
+}
+
+
+void ThiefBotFactory::doSomething() {
+    int count = 0;
+    bool noBots = true;
+    for (int x = getX() - 3; x <= getX() + 3; x ++) {
+        for (int y = getY() - 3; y <= getY() + 3; y ++)  {
+            vector<Actor*> items = getWorld()->getActor(x, y);
+            for (size_t i = 0; i != items.size(); i ++) {
+                if (items.at(i)->isThiefBot()) {
+                    count ++;
+                    if (x == getX() && y == getY())
+                        noBots = false;
+                }
+            }
+        }
+    }
+    if (count < 3 && noBots && randInt(1, 50) == 1) {
+        if (m_makeRegularBots)
+            getWorld()->addObject(new ThiefBot(getX(), getY(), getWorld()));
+        else
+            getWorld()->addObject(new MeanThiefBot(getX(), getY(), getWorld()));
+        getWorld()->playSound(SOUND_ROBOT_BORN);
+    }
 }
 

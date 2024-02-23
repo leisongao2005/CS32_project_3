@@ -51,7 +51,7 @@ int StudentWorld::init()
                         m_player = new Avatar(x, y, this);
                         break;
                     case Level::horiz_ragebot:
-                        m_Actors.push_back(new RageBot(x, y, this, 90));
+                        m_Actors.push_back(new RageBot(x, y, this, 0));
                         break;
                     case Level::vert_ragebot:
                         m_Actors.push_back(new RageBot(x, y, this, 270));
@@ -145,11 +145,11 @@ void StudentWorld::addObject(Actor* object) {
     m_Actors.push_back(object);
 }
 
-bool StudentWorld::isObstructed(int x, int y, int direction) {
+bool StudentWorld::isObstructed(int x, int y, int direction, Actor* pusher) {
     bool empty = true;
     for (size_t i = 0; i < m_Actors.size(); i ++) {
         if (m_Actors[i]->getX() == x && m_Actors[i]->getY() == y) {
-            if (m_Actors[i]->canPush(direction))
+            if (m_Actors[i]->canPush(direction, pusher))
                 ;
             else
                 empty = false;
@@ -246,6 +246,8 @@ void StudentWorld::cleanUp()
         m_Actors.erase(m_Actors.begin() + i);
     }
     delete m_player;
+    m_crystals = 0;
+    m_crystalsCollected = 0;
 }
 
 void StudentWorld::completeLevel() {

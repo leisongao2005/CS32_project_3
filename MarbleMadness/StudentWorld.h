@@ -21,7 +21,7 @@ public:
     virtual void cleanUp();
     void getCrystal() {m_crystalsCollected++;}
     void addObject(Actor* object);
-    bool isObstructed(int x, int y, int direction);
+    bool isObstructed(int x, int y, int direction, Actor* pusher);
     bool isPit(int x, int y);
     bool isEmpty(int x, int y);
     std::vector<Actor*> getActor(int x, int y);
