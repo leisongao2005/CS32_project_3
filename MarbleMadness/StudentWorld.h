@@ -27,7 +27,12 @@ public:
     std::vector<Actor*> getActor(int x, int y);
     bool playerHere(int x, int y);
     void completeLevel();
-
+    void restoreHealth();
+    void restoreAmmo();
+    bool playerInSight(int x, int y, int direction);
+    bool isPeaObstructed(int x, int y);
+    Actor* goodieHere(int x, int y);
+    Avatar* getPlayer() {return m_player;}
 private:
     Avatar* m_player;
     std::vector<Actor*> m_Actors;

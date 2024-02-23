@@ -187,6 +187,58 @@ bool StudentWorld::playerHere(int x, int y) {
     return m_player->getX() == x && m_player->getY() == y;
 }
 
+void StudentWorld::restoreHealth() {
+    m_player->maxHealth();
+}
+
+void StudentWorld::restoreAmmo() {
+    m_player->addAmmo();
+}
+
+bool StudentWorld::isPeaObstructed(int x, int y) {
+    for (size_t i = 0; i != m_Actors.size(); i ++) {
+        if (m_Actors[i]->isPeaObstacle() && m_Actors[i]->getX() == x && m_Actors[i]->getY() == y) {
+            return true;
+        }
+    }
+    return false;
+}
+
+bool StudentWorld::playerInSight(int x, int y, int direction) {
+    int px = m_player->getX(), py = m_player->getY();
+    int dx = 0, dy = 0;
+    switch (direction) {
+        case Actor::up:
+            dy = 1;
+            break;
+        case Actor::down:
+            dy = -1;
+            break;
+        case Actor::left:
+            dx = -1;
+            break;
+        case Actor::right:
+            dx = 1;
+            break;
+    }
+    while (true) {
+        x += dx;
+        y += dy;
+        if (px == x && py == y)
+            return true;
+        if (isPeaObstructed(x, y))
+            return false;
+    }
+    return false;
+}
+
+Actor* StudentWorld::goodieHere(int x, int y) {
+    for (size_t i = 0; i != m_Actors.size(); i ++) {
+        if (m_Actors[i]->isGoodie())
+            return m_Actors[i];
+    }
+    return nullptr;
+}
 void StudentWorld::cleanUp()
 {
     for (size_t i = 0; i != m_Actors.size();) {
@@ -199,3 +251,4 @@ void StudentWorld::cleanUp()
 void StudentWorld::completeLevel() {
 //    advanceToNextLevel();
 }
+
