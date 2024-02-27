@@ -2,133 +2,190 @@
 #define ACTOR_H_
 
 #include "GraphObject.h"
-#include "StudentWorld.h"
-
-// Students:  Add code to this file, Actor.cpp, StudentWorld.h, and StudentWorld.cpp
 
 class StudentWorld;
-
-class Actor : public GraphObject {
+class Agent;
+class Actor : public GraphObject
+{
 public:
-    Actor(int ID, int startX, int startY, StudentWorld* world, int direction = none): GraphObject(ID, startX, startY, direction), m_isAlive(true), m_world(world) {}
-    virtual void doSomething() {};
-    virtual bool canPush(int direction, Actor* pusher) {return true;}
-    virtual bool isPit() {return false;}
-    virtual bool isAlive() {return m_isAlive;}
-    virtual bool isExit() {return false;}
-    virtual bool isMarble() {return false;}
-    virtual bool getAttacked() {return false;}
-    virtual bool isPeaObstacle() {return false;}
-    virtual bool isWall() {return false;}
-    virtual bool isGoodie() {return false;}
-    virtual bool isPlayer() {return false;}
-    virtual bool isThiefBot() {return false;}
-    void setDead() {m_isAlive = false;}
-    StudentWorld* getWorld() {return m_world;}
-private:
-    StudentWorld* m_world;
-    bool m_isAlive;
-};
+    Actor(StudentWorld* world, int startX, int startY, int imageID,
+          int hitPoints, int startDir): GraphObject(imageID, startX, startY, startDir), m_world(world), m_hitpoints(hitPoints), m_alive(true) {}
 
-class Pea : public Actor {
-public:
-    Pea(int startX, int startY, StudentWorld* world, int direction): Actor(IID_PEA, startX, startY, world, direction) {setVisible(true);}
-    virtual void doSomething();
-};
+      // Action to perform each tick
+    virtual void doSomething() = 0;
+
+      // Is this actor alive?
+    bool isAlive() const {return m_alive;}
     
-class Avatar : public Actor {
-public:
-    Avatar(int startX, int startY, StudentWorld* world): Actor(IID_PLAYER, startX, startY, world, right), m_hitpoints(20), m_numPeas(20) {setVisible(true);}
-    virtual void doSomething();
-    virtual bool getAttacked();
-    virtual bool isPlayer() {return true;}
-    void firePea();
-    int getHealth() {return m_hitpoints*5;}
-    int getAmmo() {return m_numPeas;}
-    void maxHealth() {m_hitpoints = 20;}
-    void addAmmo() {m_numPeas += 20;}
+      // Mark this actor as dead
+    void setDead() {m_alive = false;}
+    
+      // Reduce this actor's hit points
+    void decHitPoints(int amt) {m_hitpoints -= amt;}
+    
+      // Get this actor's world
+    StudentWorld* getWorld() const {return m_world;}
+    
+      // Can an agent occupy the same square as this actor?
+    virtual bool allowsAgentColocation() const {return false;}
+    
+      // Can a marble occupy the same square as this actor?
+    virtual bool allowsMarble() const {return false;}
+    
+      // Does this actor count when a factory counts items near it?
+    virtual bool countsInFactoryCensus() const {return false;}
+    
+      // Does this actor stop peas from continuing?
+    virtual bool stopsPea() const {return false;}
+    
+      // Can this actor be damaged by peas?
+    virtual bool isDamageable() const {return false;}
+
+      // Cause this Actor to sustain damageAmt hit points of damage.
+    virtual void damage(int damageAmt) {m_hitpoints -= damageAmt;}
+    
+      // Can this actor be pushed by a to location x,y?
+    virtual bool bePushedBy(Agent* a, int x, int y) {return false;}
+    
+      // Can this actor be swallowed by a pit?
+    virtual bool isSwallowable() const {return false;}
+    
+      // Can this actor be picked up by a ThiefBot?
+    virtual bool isStealable() const {return false;}
+    
+      // How many hit points does this actor have left?
+    virtual int getHitPoints() const {return m_hitpoints;}
+    
+      // Set this actor's hit points to amt.
+    virtual void setHitPoints(int amt) {m_hitpoints = amt;}
+    
+      // Make the actor sustain damage.  Return true if this kills the
+      // actor, and false otherwise.
+    virtual bool tryToBeKilled(int damageAmt) {
+        m_hitpoints -= damageAmt;
+        if (m_hitpoints <= 0) {
+            m_alive = false;
+            return true;
+        }
+        return false;
+    }
+    
+    int getdx() const {
+        int dx = 0;
+        switch (getDirection()) {
+            case left:
+                dx = -1;
+                break;
+            case right:
+                dx = 1;
+                break;
+        }
+        return dx;
+    }
+    
+    int getdy() const {
+        int dy = 0;
+        switch (getDirection()) {
+            case up:
+                dy = 1;
+                break;
+            case down:
+                dy = -1;
+                break;
+        }
+        return dy;
+    }
+    
+    virtual bool isExit() const {return false;}
+
 private:
+    bool m_alive;
     int m_hitpoints;
-    int m_numPeas;
+    StudentWorld* m_world;
 };
 
-class Wall : public Actor {
+class Agent : public Actor
+{
 public:
-    Wall(int startX, int startY, StudentWorld* world): Actor(IID_WALL, startX, startY, world) {setVisible(true);}
-    virtual bool canPush(int direction, Actor* pusher) {return false;}
-    virtual bool isPeaObstacle() {return true;}
-    virtual bool isWall() {return true;}
-    virtual bool getAttacked() {return true;}
+    Agent(StudentWorld* world, int startX, int startY, int imageID,
+          int hitPoints, int startDir): Actor(world, startX, startY, imageID, hitPoints, startDir) {}
+
+      // Move to the adjacent square in the direction the agent is facing
+      // if it is not blocked, and return true.  Return false if the agent
+      // can't move.
+    bool moveIfPossible();
+
+      // Return true if this agent can push marbles (which means it's the
+      // player).
+    virtual bool canPushMarbles() const {return false;}
+
+      // Return true if this agent doesn't shoot unless there's an unobstructed
+      // path to the player.
+    
+    //*** should only be the player who can shoot without clear path
+    virtual bool needsClearShot() const {return true;}
+
+      // Return the sound effect ID for a shot from this agent.
+    virtual int shootingSound() const {return SOUND_ENEMY_FIRE;}
 };
 
-class Marble : public Actor {
+class Player : public Agent
+{
 public:
-    Marble(int startX, int startY, StudentWorld* world): Actor(IID_MARBLE, startX, startY, world), m_hitpoints(10) {setVisible(true);}
-    virtual bool getAttacked();
-    void getPushed(int direction);
-    virtual bool canPush(int direction, Actor* pusher);
-    virtual bool isPeaObstacle() {return true;}
-    virtual bool isMarble() {return true;}
+    Player(StudentWorld* world, int startX, int startY): Agent(world, startX, startY, IID_PLAYER, 20, right), m_ammo(20) {setVisible(true);}
+    
+    virtual void doSomething();
+    virtual bool isDamageable() const {return true;}
+    virtual void damage(int damageAmt);
+    virtual bool canPushMarbles() const {return true;}
+    virtual bool needsClearShot() const {return false;}
+    virtual int shootingSound() const {return SOUND_PLAYER_FIRE;}
+    
+      // Get player's health percentage
+    int getHealthPct() const {
+        return getHitPoints() * 5;
+    }
+
+      // Get player's amount of ammunition
+    int getAmmo() const {
+        return m_ammo;
+    };
+    
+      // Restore player's health to the full amount.
+    void restoreHealth() {
+        setHitPoints(20);
+    }
+    
+      // Increase player's amount of ammunition.
+    void increaseAmmo() {
+        m_ammo += 20;
+    }
+    
 private:
-    int m_hitpoints;
+//    void firePea() const;
+    int m_ammo;
 };
 
-class Pit : public Actor {
+
+class Robot : public Agent
+{
 public:
-    Pit(int startX, int startY, StudentWorld* world): Actor(IID_PIT, startX, startY, world) {setVisible(true);}
+    Robot(StudentWorld* world, int startX, int startY, int imageID,
+          int hitPoints, int score, int startDir);
     virtual void doSomething();
-    virtual bool canPush(int direction, Actor* pusher) {return false;}
-    virtual bool isPit() {return true;}
-};
+    virtual bool isDamageable() const {return true;}
+    virtual void damage(int damageAmt);
+    virtual bool canPushMarbles() const {return false;}
+    virtual bool needsClearShot() const {return true;}
+    virtual int shootingSound() const {return SOUND_ENEMY_FIRE;}
+    virtual void dieForSpecificRobotSubclass() {} ;
+    virtual void doSomethingForSpecificRobotSubclass() {} ;
 
-class Crystal : public Actor {
-public:
-    Crystal(int startX, int startY, StudentWorld* world): Actor(IID_CRYSTAL, startX, startY, world) {setVisible(true);}
-    virtual void doSomething();
-};
 
-class Exit : public Actor {
-public:
-    Exit(int startX, int startY, StudentWorld* world): Actor(IID_EXIT, startX, startY, world) {setVisible(false);}
-    virtual void doSomething();
-    virtual bool isExit() {return true;}
-//private:
-//    bool m_isVisible;
-};
-
-class Goodie : public Actor {
-public:
-    Goodie(int imageID, int startX, int startY, StudentWorld* world): Actor(imageID, startX, startY, world) {}
-    virtual void doSomething()=0;
-    virtual bool isGoodie() {return true;}
-};
-
-class ExtraLifeGoodie : public Goodie {
-public:
-    ExtraLifeGoodie(int startX, int startY, StudentWorld* world): Goodie(IID_EXTRA_LIFE, startX, startY, world) {setVisible(true);}
-    virtual void doSomething();
-};
-
-class RestoreHealthGoodie : public Goodie {
-public:
-    RestoreHealthGoodie(int startX, int startY, StudentWorld* world): Goodie(IID_RESTORE_HEALTH, startX, startY, world) {setVisible(true);}
-    virtual void doSomething();
-};
-
-class AmmoGoodie : public Goodie {
-public:
-    AmmoGoodie(int startX, int startY, StudentWorld* world): Goodie(IID_AMMO, startX, startY, world) {setVisible(true);}
-    virtual void doSomething();
-};
-
-class Robot : public Actor {
-public:
-    Robot(int imageID, int startX, int startY, StudentWorld* world, int direction, int hp);
-    virtual void doSomething()=0;
-    virtual bool getAttacked()=0;
-    void takeDamage(int damage) {m_hitpoints -= damage;}
-    int getHealth() {return m_hitpoints;}
-    virtual bool canPush(int direction, Actor* pusher) {return false;}
+      // Does this robot shoot?
+    virtual bool isShootingRobot() const {return true;}
+    
+private:
     bool checkTick() {
         if (m_curr_tick < m_ticks) {
             m_curr_tick ++;
@@ -139,59 +196,164 @@ public:
             return true;
         }
     }
-    void firePea();
-    virtual bool isPeaObstacle() {return true;}
-private:
-    int m_hitpoints;
+    int m_score;
     int m_ticks;
     int m_curr_tick;
 };
 
-class RageBot : public Robot {
+class RageBot : public Robot
+{
 public:
-    RageBot(int startX, int startY, StudentWorld* world, int direction): Robot(IID_RAGEBOT, startX, startY, world, direction, 10) {setVisible(true);}
-    virtual void doSomething();
-    virtual bool getAttacked();
+    RageBot(StudentWorld* world, int startX, int startY, int startDir): Robot(world, startX, startY, IID_RAGEBOT, 10, 100, startDir) {}
+//    virtual void doSomething();
+    virtual void dieForSpecificRobotSubclass() {};
+    virtual void doSomethingForSpecificRobotSubclass();
 };
 
-class ThiefBot : public Robot {
+class ThiefBot : public Robot
+{
 public:
-    ThiefBot(int startX, int startY, StudentWorld* world, int imageID = IID_THIEFBOT, int hp = 5): Robot(imageID, startX, startY, world, right, hp), m_distanceBeforeTurning(randInt(1, 6)), m_Goodie(nullptr) {setVisible(true);}
-    virtual void doSomething();
-    virtual bool getAttacked();
-    virtual bool isThiefBot() {return true;}
-    void move();
-    void setGoodie(Actor* goodie) {m_Goodie = goodie;}
-    Actor* getGoodie() {return m_Goodie;}
-    void setDistanceBeforeTurning(int dist) {m_distanceBeforeTurning = dist;}
-    int getDistanceBeforeTurning() {return m_distanceBeforeTurning;}
+    ThiefBot(StudentWorld* world, int startX, int startY, int imageID,
+             int hitPoints, int score): Robot(world, startX, startY, imageID, hitPoints, score, right), m_Goodie(nullptr), m_distanceBeforeTurning(randInt(1, 6)) {}
+//    virtual void doSomething();
+    virtual bool countsInFactoryCensus() const {return true;}
+//    virtual void damage(int damageAmt);
+    // drop goodie
+    virtual void dieForSpecificRobotSubclass();
+    virtual void doSomethingForSpecificRobotSubclass();
 private:
     int m_distanceBeforeTurning;
     Actor* m_Goodie;
 };
-
-class MeanThiefBot : public ThiefBot {
+class RegularThiefBot : public ThiefBot
+{
 public:
-    MeanThiefBot(int startX, int startY, StudentWorld* world): ThiefBot(startX, startY, world, IID_MEAN_THIEFBOT, 8) {setVisible(true);}
-    virtual void doSomething();
-    virtual bool getAttacked();
+    RegularThiefBot(StudentWorld* world, int startX, int startY): ThiefBot(world, startX, startY, IID_THIEFBOT, 5, 10) {}
+//    virtual void doSomething();
+    virtual bool isShootingRobot() const {return false;}
 };
 
-class ThiefBotFactory : public Actor {
+class MeanThiefBot : public ThiefBot
+{
 public:
-    ThiefBotFactory(int startX, int startY, bool regular, StudentWorld* world): Actor(IID_ROBOT_FACTORY, startX, startY, world) {
-        if (regular)
-            m_makeRegularBots = true;
-        else
-            m_makeRegularBots = false;
-        setVisible(true);
-    }
+    MeanThiefBot(StudentWorld* world, int startX, int startY): ThiefBot(world, startX, startY, IID_MEAN_THIEFBOT, 8, 20) {}
+//    virtual void doSomething();
+};
+
+class Exit : public Actor
+{
+public:
+    Exit(StudentWorld* world, int startX, int startY): Actor(world, startX, startY, IID_EXIT, 0, none) {setVisible(false);}
     virtual void doSomething();
-    virtual bool canPush(int direction, Actor* pusher) {return false;}
-    virtual bool getAttacked() {return true;}
-    virtual bool isPeaObstacle() {return true;}
+    virtual bool allowsAgentColocation() const {return true;}
+    virtual bool isExit() const {return true;}
+};
+
+class Wall : public Actor
+{
+public:
+    Wall(StudentWorld* world, int startX, int startY): Actor(world, startX, startY, IID_WALL, 0, none) {setVisible(true);}
+    virtual void doSomething() {};
+    virtual bool stopsPea() const {return true;}
+};
+
+class Marble : public Actor
+{
+public:
+    Marble(StudentWorld* world, int startX, int startY): Actor(world, startX, startY, IID_MARBLE, 10, none) {setVisible(true);}
+    virtual void doSomething() {}
+    virtual bool isDamageable() const {return true;}
+    virtual void damage(int damageAmt) {
+        if (getHitPoints() > damageAmt) {
+            decHitPoints(damageAmt);
+        }
+        else {
+            setDead();
+        }
+    }
+    virtual bool isSwallowable() const {return true;}
+    virtual bool bePushedBy(Agent* a, int x, int y);
+};
+
+class Pit : public Actor
+{
+public:
+    Pit(StudentWorld* world, int startX, int startY): Actor(world, startX, startY, IID_PIT, 0, none) {setVisible(true);}
+    virtual void doSomething();
+    virtual bool allowsMarble() const {return true;}
+};
+
+class Pea : public Actor
+{
+public:
+    Pea(StudentWorld* world, int startX, int startY, int startDir): Actor(world, startX, startY, IID_PEA, 0, startDir) {setVisible(true);}
+    virtual void doSomething();
+    virtual bool allowsAgentColocation() const {return true;}
+};
+
+class ThiefBotFactory : public Actor
+{
+public:
+    ThiefBotFactory(StudentWorld* world, int startX, int startY, bool type): Actor(world, startX, startY, IID_ROBOT_FACTORY, 0, none), m_meanBots(type) {setVisible(true);}
+    virtual void doSomething();
+    virtual bool stopsPea() const {return true;}
 private:
-    bool m_makeRegularBots;
+    bool m_meanBots;
+};
+
+class PickupableItem : public Actor
+{
+public:
+    PickupableItem(StudentWorld* world, int startX, int startY, int imageID,
+                   int score): Actor(world, startX, startY, imageID, 0, none), m_score(score) {}
+    virtual void doSomething();
+    virtual bool allowsAgentColocation() const {return true;}
+    virtual void doItemSpecificSomething() = 0;
+private:
+    int m_score;
+};
+
+class Crystal : public PickupableItem
+{
+public:
+    Crystal(StudentWorld* world, int startX, int startY): PickupableItem(world, startX, startY, IID_CRYSTAL, 50) {setVisible(true);}
+    virtual void doItemSpecificSomething();
+};
+
+class Goodie : public PickupableItem
+{
+public:
+    Goodie(StudentWorld* world, int startX, int startY, int imageID,
+           int score): PickupableItem(world, startX, startY, imageID, score), m_stolen(false) {}
+    virtual bool isStealable() const {return true;}
+    virtual void doItemSpecificSomething();
+    virtual void doGoodieSpecificSomething()=0;
+
+      // Set whether this goodie is currently stolen.
+    void setStolen(bool status) {m_stolen = status;}
+private:
+    bool m_stolen;
+};
+
+class ExtraLifeGoodie : public Goodie
+{
+public:
+    ExtraLifeGoodie(StudentWorld* world, int startX, int startY): Goodie(world, startX, startY, IID_EXTRA_LIFE, 1000) {}
+    virtual void doGoodieSpecificSomething();
+};
+
+class RestoreHealthGoodie : public Goodie
+{
+public:
+    RestoreHealthGoodie(StudentWorld* world, int startX, int startY): Goodie(world, startX, startY, IID_RESTORE_HEALTH, 500) {}
+    virtual void doGoodieSpecificSomething();
+};
+
+class AmmoGoodie : public Goodie
+{
+public:
+    AmmoGoodie(StudentWorld* world, int startX, int startY): Goodie(world, startX, startY, IID_AMMO, 100) {setVisible(true);}
+    virtual void doGoodieSpecificSomething();
 };
 
 #endif // ACTOR_H_

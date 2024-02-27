@@ -5,420 +5,223 @@
 using namespace std;
 // Students:  Add code to this file, Actor.h, StudentWorld.h, and StudentWorld.cpp
 
-void Avatar::doSomething() {
+bool Agent::moveIfPossible() {
+    if (getWorld()->canAgentMoveTo(this, getX() + getdx(), getY() + getdy(), getdx(), getdy())) {
+//        moveForward();
+        moveTo(getX() + getdx(), getY() + getdy());
+        return true;
+    }
+    return false;
+}
+
+void Player::doSomething() {
+    cout << "player at " << getX() << ", " << getY() << endl;
     if (!isAlive())
         return;
     int ch;
     // must implement getWorld function
     if (getWorld()->getKey(ch)) {
+        int dx = 0, dy = 0;
         switch (ch)
         {
             case KEY_PRESS_ESCAPE:
                 setDead();
                 break;
             case KEY_PRESS_SPACE: // fires a pea
-                firePea();
+                if (m_ammo > 0) {
+                    getWorld()->addActor(new Pea(getWorld(), getX() + getdx(), getY() + getdy(), getDirection()));
+                    m_ammo --;
+                }
                 break;
             case KEY_PRESS_UP:
+                dy = 1;
                 setDirection(up);
-                if (!getWorld()->isObstructed(getX(), getY() + 1, up, this))
-                    moveTo(getX(), getY() + 1);
                 break;
             case KEY_PRESS_DOWN:
+                dy = -1;
                 setDirection(down);
-                if (!getWorld()->isObstructed(getX(), getY() - 1, down, this))
-                    moveTo(getX(), getY() - 1);
                 break;
             case KEY_PRESS_LEFT:
+                dx = -1;
                 setDirection(left);
-                if (!getWorld()->isObstructed(getX() - 1, getY(), left, this))
-                    moveTo(getX() - 1, getY());
                 break;
             case KEY_PRESS_RIGHT:
+                dx = 1;
                 setDirection(right);
-                if (!getWorld()->isObstructed(getX() + 1, getY(), right, this))
-                    moveTo(getX() + 1, getY());
                 break;
         }
-    }
-}
-
-void Avatar::firePea() {
-    int dir = getDirection();
-    if (m_numPeas <= 0)
-        return;
-    switch(dir) {
-        case up:
-            getWorld()->addObject(new Pea(getX(), getY() + 1, getWorld(), getDirection()));
-            break;
-        case down:
-            getWorld()->addObject(new Pea(getX(), getY() - 1, getWorld(), getDirection()));
-            break;
-        case left:
-            getWorld()->addObject(new Pea(getX() - 1, getY(), getWorld(), getDirection()));
-            break;
-        case right:
-            getWorld()->addObject(new Pea(getX() + 1, getY(), getWorld(), getDirection()));
-            break;
-    }
-    m_numPeas--;
-}
-
-bool Avatar::getAttacked() {
-    m_hitpoints -= 2;
-    if (m_hitpoints < 0) {
-        getWorld()->playSound(SOUND_PLAYER_DIE);
-        setDead();
-    }
-    else
-        getWorld()->playSound(SOUND_PLAYER_IMPACT);
-    return true;
-}
-
-bool Marble::getAttacked() {
-    m_hitpoints -= 2;
-    if (m_hitpoints < 0)
-        setDead();
-    return true;
-}
-
-bool Marble::canPush(int direction, Actor* pusher) {
-    int next_x = -1, next_y = -1;
-    switch (direction) {
-        case up:
-            next_x = getX();
-            next_y = getY() + 1;
-            break;
-        case down:
-            next_x = getX();
-            next_y = getY() - 1;
-            break;
-        case left:
-            next_x = getX() - 1;
-            next_y = getY();
-            break;
-        case right:
-            next_x = getX() + 1;
-            next_y = getY();
-            break;
-    }
-    if (pusher->isPlayer()) {
-        if (getWorld()->isPit(next_x, next_y) || getWorld()->isEmpty(next_x, next_y)) {
-            moveTo(next_x, next_y);
-            return true;
+        if (dx != 0 || dy != 0) {
+            moveIfPossible();
         }
     }
-    return false;
 }
 
-void Pea::doSomething() {
+void Player::damage(int damageAmt) {
+    if (getHitPoints() > damageAmt) {
+        decHitPoints(damageAmt);
+        getWorld()->playSound(SOUND_PLAYER_IMPACT);
+    }
+    else {
+        setDead();
+        getWorld()->playSound(SOUND_PLAYER_DIE);
+    }
+}
+
+Robot::Robot(StudentWorld* world, int startX, int startY, int imageID,
+      int hitPoints, int score, int startDir): Agent(world, startX, startY, imageID, hitPoints, startDir), m_score(score) {
+    m_ticks = (28 - getWorld()->getLevel())/4;
+    if (m_ticks < 3)
+        m_ticks = 3;
+    m_curr_tick = 0;
+}
+
+void Robot::damage(int damageAmt) {
+    if (getHitPoints() > damageAmt) {
+        decHitPoints(damageAmt);
+        getWorld()->playSound(SOUND_ROBOT_IMPACT);
+    }
+    else {
+        setDead();
+        getWorld()->playSound(SOUND_ROBOT_DIE);
+        getWorld()->increaseScore(m_score);
+        dieForSpecificRobotSubclass();
+    }
+}
+
+void Robot::doSomething() {
     if (!isAlive())
         return;
-    vector<Actor*> items = getWorld()->getActor(getX(), getY());
-    for (size_t i = 0; i != items.size(); i++) {
-        Actor* actor = items.at(i);
-        if (actor->getAttacked()) {
-            setDead();
+    if (checkTick()) {
+        if (isShootingRobot()) {
+            // try to shoot
+            if (getWorld()->existsClearShotToPlayer(getX(), getY(), getdx(), getdy())) {
+                getWorld()->addActor(new Pea(getWorld(), getX() + getdx(), getY() + getdy(), getDirection()));
+                return;
+            }
         }
-        else if (getWorld()->playerHere(getX(), getY())){
-            getWorld()->getPlayer()->getAttacked();
-            setDead();
-        }
-        
+        // robot movement or picking up goodie
+        doSomethingForSpecificRobotSubclass();
     }
-    moveForward();
-    items = getWorld()->getActor(getX(), getY());
-    for (size_t i = 0; i != items.size(); i++) {
-        Actor* actor = items.at(i);
-        if (actor->getAttacked()) {
-            setDead();
-        }
-        else if (getWorld()->playerHere(getX(), getY())){
-            getWorld()->getPlayer()->getAttacked();
-            setDead();
+}
+
+void RageBot::doSomethingForSpecificRobotSubclass() {
+    if (!moveIfPossible()) {
+        setDirection(getDirection() + 180);
+    }
+}
+
+void ThiefBot::doSomethingForSpecificRobotSubclass() {
+    if (m_Goodie == nullptr && getWorld()->getColocatedStealable(getX(), getY()) != nullptr && randInt(1, 10) == 1) {
+        m_Goodie = getWorld()->getColocatedStealable(getX(), getY());
+        m_Goodie->setVisible(false);
+        getWorld()->playSound(SOUND_ROBOT_MUNCH);
+        return;
+    }
+    if (m_distanceBeforeTurning <= 0 || !moveIfPossible()) {
+        m_distanceBeforeTurning = randInt(1, 6);
+        vector<int> directions = {up, down, left, right};
+        while (directions.size() != 0) {
+            int dir = randInt(0, int(directions.size()) - 1);
+            setDirection(directions.at(dir));
+            if (moveIfPossible())
+                return;
+            else
+                directions.erase(directions.begin() + dir);
         }
     }
+}
+
+void ThiefBot::dieForSpecificRobotSubclass() {
+    if (m_Goodie != nullptr) {
+        m_Goodie->setVisible(true);
+        m_Goodie->moveTo(getX(), getY());
+    }
+}
+
+void Exit::doSomething() {
+    cout << "exit doing soemthing" << endl;
+    cout << "exit at " << getX() << ", " << getY() << endl;
+    if (isVisible())
+        cout << "visible" << endl;
+    if (isVisible() && getWorld()->isPlayerColocatedWith(getX(), getY())) {
+        cout << "level done" << endl;
+        getWorld()->playSound(SOUND_FINISHED_LEVEL);
+        getWorld()->increaseScore(2000);
+        getWorld()->setLevelFinished();
+    }
+}
+
+bool Marble::bePushedBy(Agent* a, int x, int y) {
+    if (getWorld()->canMarbleMoveTo(x, y) && getWorld()->isPlayerColocatedWith(getX() - a->getdx(), getY() - a->getdy())) {
+        moveTo(x, y);
+        return true;
+    }
+    return false;
 }
 
 void Pit::doSomething() {
     if (!isAlive())
         return;
-    vector<Actor*> items = getWorld()->getActor(getX(), getY());
-    for (size_t i = 0; i != items.size(); i++) {
-        Actor* actor = items.at(i);
-        if (actor->isMarble()) {
+    if (getWorld()->swallowSwallowable(this)) {
+        setDead();
+        // swallowSwallowable function kills marble
+    }
+}
+
+void Pea::doSomething() {
+    if (!isAlive())
+        return;
+    if (getWorld()->damageSomething(this, 2))
+        setDead();
+    else {
+        moveTo(getX() + getdx(), getY() + getdy());
+        if (getWorld()->damageSomething(this, 2))
             setDead();
-            actor->setDead();
-        }
     }
 }
-
-void Crystal::doSomething() {
-    if (!isAlive())
-        return;
-    if (getWorld()->playerHere(getX(), getY())) {
-        getWorld()->increaseScore(50);
-        getWorld()->getCrystal();
-        setDead();
-        getWorld()->playSound(SOUND_GOT_GOODIE);
-    }
-}
-
-void Exit::doSomething() {
-    if (isVisible() && getWorld()->playerHere(getX(), getY())) {
-        getWorld()->playSound(SOUND_FINISHED_LEVEL);
-        getWorld()->completeLevel();
-    }
-}
-
-void ExtraLifeGoodie::doSomething() {
-    if(!isAlive() || !isVisible())
-        return;
-    if (getWorld()->playerHere(getX(), getY())) {
-        getWorld()->increaseScore(1000);
-        setDead();
-        getWorld()->playSound(SOUND_GOT_GOODIE);
-        getWorld()->incLives();
-    }
-}
-
-void RestoreHealthGoodie::doSomething() {
-    if(!isAlive() || !isVisible())
-        return;
-    if (getWorld()->playerHere(getX(), getY())) {
-        getWorld()->increaseScore(500);
-        setDead();
-        getWorld()->playSound(SOUND_GOT_GOODIE);
-        getWorld()->restoreHealth();
-    }
-}
-
-void AmmoGoodie::doSomething() {
-    if(!isAlive() || !isVisible())
-        return;
-    if (getWorld()->playerHere(getX(), getY())) {
-        getWorld()->increaseScore(100);
-        setDead();
-        getWorld()->playSound(SOUND_GOT_GOODIE);
-        getWorld()->restoreAmmo();
-    }
-}
-Robot::Robot(int imageID, int startX, int startY, StudentWorld* world, int direction, int hp): Actor(imageID, startX, startY, world, direction) {
-    m_ticks = (28 - getWorld()->getLevel())/4;
-    if (m_ticks < 3)
-        m_ticks = 3;
-    m_hitpoints = hp;
-}
-
-void Robot::firePea() {
-    int dir = getDirection();
-    switch(dir) {
-        case up:
-            getWorld()->addObject(new Pea(getX(), getY() + 1, getWorld(), getDirection()));
-            break;
-        case down:
-            getWorld()->addObject(new Pea(getX(), getY() - 1, getWorld(), getDirection()));
-            break;
-        case left:
-            getWorld()->addObject(new Pea(getX() - 1, getY(), getWorld(), getDirection()));
-            break;
-        case right:
-            getWorld()->addObject(new Pea(getX() + 1, getY(), getWorld(), getDirection()));
-            break;
-    }
-}
-
-void RageBot::doSomething() {
-    if (!isAlive())
-        return;
-    if (checkTick()) {
-        if (getWorld()->playerInSight(getX(), getY(), getDirection())) {
-            firePea();
-        }
-        else {
-            switch(getDirection()) {
-                case up:
-                    if (!getWorld()->isObstructed(getX(), getY() + 1, up, this))
-                        moveTo(getX(), getY() + 1);
-                    else
-                        setDirection(getDirection() + 180);
-                    break;
-                case down:
-                    if (!getWorld()->isObstructed(getX(), getY() - 1, down, this))
-                        moveTo(getX(), getY() - 1);
-                    else
-                        setDirection(getDirection() + 180);
-                    break;
-                case left:
-                    if (!getWorld()->isObstructed(getX() - 1, getY(), left, this))
-                        moveTo(getX() - 1, getY());
-                    else
-                        setDirection(getDirection() + 180);
-                    break;
-                case right:
-                    if (!getWorld()->isObstructed(getX() + 1, getY(), right, this))
-                        moveTo(getX() + 1, getY());
-                    else
-                        setDirection(getDirection() + 180);
-                    break;
-            }
-        }
-    }
-}
-
-bool RageBot::getAttacked() {
-    takeDamage(2);
-    if (getHealth() <= 0) {
-        setDead();
-        getWorld()->playSound(SOUND_ROBOT_DIE);
-        getWorld()->increaseScore(100);
-    }
-    else {
-        getWorld()->playSound(SOUND_ROBOT_IMPACT);
-    }
-    return true;
-}
-
-void ThiefBot::move() {
-    switch(getDirection()) {
-        case up:
-            if (!getWorld()->isObstructed(getX(), getY() + 1, up, this)) {
-                moveTo(getX(), getY() + 1);
-                return;
-            }
-        case down:
-            if (!getWorld()->isObstructed(getX(), getY() - 1, down, this)) {
-                moveTo(getX(), getY() - 1);
-                return;
-            }
-        case left:
-            if (!getWorld()->isObstructed(getX() - 1, getY(), left, this)) {
-                moveTo(getX() - 1, getY());
-                return;
-            }
-        case right:
-            if (!getWorld()->isObstructed(getX() + 1, getY(), right, this)) {
-                moveTo(getX() + 1, getY());
-                return;
-            }
-    }
-}
-void ThiefBot::doSomething() {
-    if (!isAlive())
-        return;
-    if (checkTick()) {
-        setGoodie(getWorld()->goodieHere(getX(), getY()));
-        if (getGoodie() != nullptr && randInt(1,10) == 1) {
-            getGoodie()->setVisible(false);
-            getWorld()->playSound(SOUND_ROBOT_MUNCH);
-            return;
-        }
-        if (getDistanceBeforeTurning() > 0) {
-            move();
-        }
-        else {
-            setDistanceBeforeTurning(randInt(1, 6));
-            vector<int> dir = {up, down, left, right};
-            while (dir.size() != 0) {
-                int pos = randInt(0, int(dir.size()) - 1);
-                setDirection(dir.at(pos));
-                if (!getWorld()->isObstructed(getX(), getY(), getDirection(), this)) {
-                    move();
-                    return;
-                }
-                else
-                    dir.erase(dir.begin() + pos);
-            }
-        }
-    }
-}
-
-bool ThiefBot::getAttacked() {
-    takeDamage(2);
-    if (getHealth() <= 0) {
-        setDead();
-        getWorld()->playSound(SOUND_ROBOT_DIE);
-        getWorld()->increaseScore(10);
-        m_Goodie->setVisible(true);
-        m_Goodie->moveTo(getX(), getY());
-    }
-    else {
-        getWorld()->playSound(SOUND_ROBOT_IMPACT);
-    }
-    return true;
-}
-
-void MeanThiefBot::doSomething() {
-    if (!isAlive())
-        return;
-    if (checkTick()) {
-        if (getWorld()->playerInSight(getX(), getY(), getDirection()))
-            firePea();
-        else {
-            setGoodie(getWorld()->goodieHere(getX(), getY()));
-            if (getGoodie() != nullptr && randInt(1,10) == 1) {
-                getGoodie()->setVisible(false);
-                getWorld()->playSound(SOUND_ROBOT_MUNCH);
-                return;
-            }
-            if (getDistanceBeforeTurning() > 0) {
-                move();
-            }
-            else {
-                setDistanceBeforeTurning(randInt(1, 6));
-                vector<int> dir = {up, down, left, right};
-                while (dir.size() != 0) {
-                    int pos = randInt(0, int(dir.size()) - 1);
-                    setDirection(dir.at(pos));
-                    if (!getWorld()->isObstructed(getX(), getY(), getDirection(), this)) {
-                        move();
-                        return;
-                    }
-                    else
-                        dir.erase(dir.begin() + pos);
-                }
-            }
-        }
-    }
-}
-
-bool MeanThiefBot::getAttacked() {
-    takeDamage(2);
-    if (getHealth() <= 0) {
-        setDead();
-        getWorld()->playSound(SOUND_ROBOT_DIE);
-        getWorld()->increaseScore(20);
-        getGoodie()->setVisible(true);
-        getGoodie()->moveTo(getX(), getY());
-    }
-    else {
-        getWorld()->playSound(SOUND_ROBOT_IMPACT);
-    }
-    return true;
-}
-
 
 void ThiefBotFactory::doSomething() {
     int count = 0;
-    bool noBots = true;
-    for (int x = getX() - 3; x <= getX() + 3; x ++) {
-        for (int y = getY() - 3; y <= getY() + 3; y ++)  {
-            vector<Actor*> items = getWorld()->getActor(x, y);
-            for (size_t i = 0; i != items.size(); i ++) {
-                if (items.at(i)->isThiefBot()) {
-                    count ++;
-                    if (x == getX() && y == getY())
-                        noBots = false;
-                }
-            }
-        }
-    }
-    if (count < 3 && noBots && randInt(1, 50) == 1) {
-        if (m_makeRegularBots)
-            getWorld()->addObject(new ThiefBot(getX(), getY(), getWorld()));
+    if (getWorld()->doFactoryCensus(getX(), getY(), 3, count) && count < 3 && randInt(1, 50) == 1) {
+        if (!m_meanBots)
+            getWorld()->addActor(new RegularThiefBot(getWorld(), getX(), getY()));
         else
-            getWorld()->addObject(new MeanThiefBot(getX(), getY(), getWorld()));
+            getWorld()->addActor(new MeanThiefBot(getWorld(), getX(), getY()));
         getWorld()->playSound(SOUND_ROBOT_BORN);
     }
 }
 
+void PickupableItem::doSomething() {
+    if(!isAlive())
+        return;
+    if (getWorld()->isPlayerColocatedWith(getX(), getY())) {
+        getWorld()->increaseScore(m_score);
+        doItemSpecificSomething();
+        setDead();
+    }
+}
+
+void Crystal::doItemSpecificSomething() {
+    getWorld()->decCrystals();
+    getWorld()->playSound(SOUND_GOT_GOODIE);
+}
+
+void Goodie::doItemSpecificSomething() {
+    if (!isVisible())
+        m_stolen = true;
+    if (m_stolen)
+        return;
+    doGoodieSpecificSomething();
+}
+
+void ExtraLifeGoodie::doGoodieSpecificSomething() {
+    getWorld()->incLives();
+}
+
+void RestoreHealthGoodie::doGoodieSpecificSomething() {
+    getWorld()->restorePlayerHealth();
+}
+
+void AmmoGoodie::doGoodieSpecificSomething() {
+    getWorld()->increaseAmmo();
+}
