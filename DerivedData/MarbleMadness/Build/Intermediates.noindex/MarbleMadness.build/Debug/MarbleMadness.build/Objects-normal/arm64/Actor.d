@@ -8,5 +8,4 @@ dependencies: \
   /usr/X11/include/GL/freeglut_ucall.h \
   /Users/leisongao/Desktop/CS32/MarbleMadness/MarbleMadness/GameConstants.h \
   /Users/leisongao/Desktop/CS32/MarbleMadness/MarbleMadness/StudentWorld.h \
-  /Users/leisongao/Desktop/CS32/MarbleMadness/MarbleMadness/GameWorld.h \
-  /Users/leisongao/Desktop/CS32/MarbleMadness/MarbleMadness/Level.h
+  /Users/leisongao/Desktop/CS32/MarbleMadness/MarbleMadness/GameWorld.h
